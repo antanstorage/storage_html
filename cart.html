@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <link rel="stylesheet" href="/assets/css/nouislider.css">
+    <link rel="stylesheet" href="/assets/css/sst_style.css">
+    <link rel="stylesheet" href="/assets/css/slick.css">
+    <link rel="stylesheet" href="/assets/css/slick-theme.css">
+    <title>Document</title>
+    <style type="text/css">
+        html, body {
+          margin: 0;
+          padding: 0;
+        }
+    
+        * {
+          box-sizing: border-box;
+        }
+    
+        .slider {
+            width: 50%;
+            margin: 100px auto;
+        }
+    
+        .slick-slide {
+          margin: 0px 20px;
+        }
+    
+        .slick-slide img {
+          width: 100%;
+        }
+    
+        .slick-prev:before,
+        .slick-next:before {
+          color: black;
+        }
+    
+    
+        .slick-slide {
+          transition: all ease-in-out .3s;
+          opacity: .2;
+        }
+        
+        .slick-active {
+          opacity: .5;
+        }
+    
+        .slick-current {
+          opacity: 1;
+        }
+      </style>
+</head>
+
+<body>
+    <div class="__sst_body">
+        <div class="__sst_container">
+            <div class="cart-section">
+                <div class="cart-listing">
+                    <div class="head">
+                        <div class="title">Order Info</div>
+                    </div>
+
+                    <div class="cart-product">
+                        <div class="cart-block">
+                            <div class="img-block">
+                                <div class="img"><img src="/assets/img/storage_temp.jpg" alt=""></div>
+                            </div>
+                            <div class="content-data">
+                                <div class="title">Neque porro quisquam est qui dolorem</div>
+                                <div class="info"></div>
+                                <div class="size">W : 10ft x L : 12ft x H : 12ft</div>
+                            </div>
+                            <div class="qty-data">
+                                <div class="input-data">
+                                    <label>Quatity : </label>
+                                    <div class="select">
+                                        <select name="" id="">
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                            <option value="">5</option>
+                                            <option value="">6</option>
+                                            <option value="">7</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-data">
+                                <div class="price-count">5 x $99.00</div>
+                                <div class="price-total">Total : $495.00</div>
+                            </div>
+                            <div class="edit">Edit</div>
+                        </div>
+                        <div class="cart-form active">
+                            <div class="product-cycle">
+                                <div class="block">
+                                    <div class="form-block">
+                                        <div class="input-block">
+                                            <div class="select">
+                                                <label>Quantity</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">1</option>
+                                                        <option value="">2</option>
+                                                        <option value="">3</option>
+                                                        <option value="">4</option>
+                                                        <option value="">5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-block">
+                                            <div class="select">
+                                                <label>Tenant Type</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">Personal</option>
+                                                        <option value="">Business</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-block">
+                                            <div class="input">
+                                                <label>Move in Date</label>
+                                                <input type="date" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block">
+                                            <div class="select">
+                                                <label>Invoice Period</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">Personal</option>
+                                                        <option value="">Business</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-block">
+                                            <div class="select">
+                                                <label>Invoice Recuring</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">Personal</option>
+                                                        <option value="">Business</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-block">
+                                            <div class="select">
+                                                <label>Insurance</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">Doc 1</option>
+                                                        <option value="">Doc 2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="input-block">
+                                            <div class="attach">
+                                                <label>Document</label>
+                                                <div class="clip">
+                                                    <input type="file" name="" id="">
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Vehicle Info</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Vehicle Type</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="select">
+                                                <label>Vehicle Year</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">2020</option>
+                                                        <option value="">2021</option>
+                                                        <option value="">2022</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Vehicle Brand</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Vehicle Model</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Vehicle Color</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Licence State</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Registration Number</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Licence Number</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="btn">
+                                            <button class="add-btn">Save</button>
+                                            <button class="cancel-btn close-basket">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-product">
+                        <div class="cart-block">
+                            <div class="img-block">
+                                <div class="img"><img src="/assets/img/storage_temp.jpg" alt=""></div>
+                            </div>
+                            <div class="content-data">
+                                <div class="title">Neque porro quisquam est qui dolorem</div>
+                                <div class="info"></div>
+                                <div class="size">W : 10ft x L : 12ft x H : 12ft</div>
+                            </div>
+                            <div class="qty-data">
+                                <div class="input-data">
+                                    <label>Quatity : </label>
+                                    <div class="select">
+                                        <select name="" id="">
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                            <option value="">5</option>
+                                            <option value="">6</option>
+                                            <option value="">7</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-data">
+                                <div class="price-count">5 x $99.00</div>
+                                <div class="price-total">Total : $495.00</div>
+                            </div>
+                            <div class="edit">Edit</div>
+                        </div>
+                        <div class="cart-form">
+                            <div class="product-cycle">
+                                <div class="block">
+                                    <div class="form-block">
+                                        <div class="input-block">
+                                            <div class="select">
+                                                <label>Quantity</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">1</option>
+                                                        <option value="">2</option>
+                                                        <option value="">3</option>
+                                                        <option value="">4</option>
+                                                        <option value="">5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-block">
+                                            <div class="select">
+                                                <label>Tenant Type</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">Personal</option>
+                                                        <option value="">Business</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-block">
+                                            <div class="input">
+                                                <label>Move in Date</label>
+                                                <input type="date" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block">
+                                            <div class="select">
+                                                <label>Invoice Period</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">Personal</option>
+                                                        <option value="">Business</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-block">
+                                            <div class="select">
+                                                <label>Invoice Recuring</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">Personal</option>
+                                                        <option value="">Business</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-block">
+                                            <div class="select">
+                                                <label>Insurance</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">Doc 1</option>
+                                                        <option value="">Doc 2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="input-block">
+                                            <div class="attach">
+                                                <label>Document</label>
+                                                <div class="clip">
+                                                    <input type="file" name="" id="">
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Vehicle Info</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Vehicle Type</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="select">
+                                                <label>Vehicle Year</label>
+                                                <div class="drop">
+                                                    <select name="" id="">
+                                                        <option value="">2020</option>
+                                                        <option value="">2021</option>
+                                                        <option value="">2022</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Vehicle Brand</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Vehicle Model</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Vehicle Color</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Licence State</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Registration Number</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="input-block vehicle-block">
+                                            <div class="input">
+                                                <label>Licence Number</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                        </div>
+                                        <div class="btn">
+                                            <button class="add-btn">Save</button>
+                                            <button class="cancel-btn close-basket">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summarys">                    
+                    <div class="head">
+                        <div class="title">Payment Summary</div>
+                    </div>
+
+                    <div class="order-summary">
+                        <div class="block">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td>Sub Total</td>
+                                    <td>:</td>
+                                    <td>$495</td>
+                                </tr>
+                                <tr>
+                                    <td>Discount</td>
+                                    <td>:</td>
+                                    <td>-$40</td>
+                                </tr>
+                                <tr>
+                                    <td>Tax</td>
+                                    <td>:</td>
+                                    <td>91%</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>:</td>
+                                    <td>$546</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="order-coupon">
+                        <div class="block">
+                            <div class="title">Coupon</div>
+                            <div class="coupon-form">
+                                <div class="input">
+                                    <input type="text" placeholder="Coupon">
+                                </div>
+                                <button class="apply-btn">Apply Coupon</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="btn">
+                        <button class="procced-btn">Procced</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/slick.js"></script>
+    <script src="/assets/js/sst_storage.js"></script>
+    <script>
+        $(function () {         
+
+
+            $(".vertical-center-4").slick({             
+                dots: true,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            });
+        })
+    </script>
+</body>
+
+</html>
