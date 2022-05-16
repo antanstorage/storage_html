@@ -1,0 +1,107 @@
+@mixin inputs(){
+    .input-block{
+        float: left;
+        width: 100%;
+    
+        .block{
+            float: left;
+            width: 100%;
+            margin-bottom: 10px;
+    
+            .input{
+                float: left;
+                width: 100%;
+                position: relative;
+                padding: 5px;
+                border: solid 1px rgba(0,0,0,0.2);
+    
+                label{
+                    float: left;
+                    font: {
+                        size: 12px;
+                        weight:400;
+                        family: $font;
+                    }
+                    margin-left: 3px;
+                    color: #555;
+                }
+                input{
+                    float: left;
+                    width: 100%;
+                    padding: 8px 4px 3px;
+                    border: 0;
+                    font: {
+                        size: 12px;
+                        weight:400;
+                        family: $font;
+                    }                                    
+                }
+            }
+    
+            .select{
+                float: left;
+                width: 100%;
+                position: relative;
+                padding: 5px;
+                border: solid 1px rgba(0,0,0,0.2);
+    
+                label{
+                    float: left;
+                    font: {
+                        size: 11px;
+                        weight:400;
+                        family: $font;
+                    }
+                    margin-left: 3px;
+                    color: #555;
+                }
+    
+                .drop{
+                    float: left;
+                    width: 100%;
+                    overflow: hidden;
+                    background-image: url(../img/expand_more.svg);
+                    background-size: 20px;
+                    background-position: 100% 4px;
+                    background-repeat: no-repeat;
+    
+                    select{
+                        float: left;
+                        width: calc(100% + 30px);
+                        padding: 5px 0 0;
+                        border: 0;
+                        background-color: transparent;
+                        font: {
+                            size: 12px;
+                            weight:400;
+                            family: $font;
+                        }                                    
+                    }
+                }
+                
+            }                            
+        }
+    }
+
+    .btn{
+        float: left;
+        width: 100%;
+        
+        .process-btn{
+            float: left;
+            width: 100%;
+            font: {
+                size: 13px;
+                weight:500;
+                family:$font;
+            }
+            color: #FFF;
+            background-color: #FF5500;
+            padding: 13px;
+            border: 0;
+            cursor: pointer;
+        }
+    }
+
+    @content;
+}

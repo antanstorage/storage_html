@@ -23,4 +23,10 @@ $(function(){
     $('.cart-product .cart-form .product-cycle .block .form-block .btn .cancel-btn').on('click', function(){        
         $(this).parents('.cart-form').slideUp(0);
     });
+
+
+    $('.payment-form .section-slot .head').on('click', function(){
+        $('.payment-access .payment-form .section-slot .slot').not('#'+$(this).attr('data-payment')).slideUp();
+        $('#'+$(this).attr('data-payment')).slideDown();
+    });
 });
