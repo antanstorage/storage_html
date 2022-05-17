@@ -36,6 +36,18 @@
                         family: $font;
                     }                                    
                 }
+                
+                input[type="date"]{
+                    float: left;
+                    width: 100%;
+                    padding: 6px 4px 3px;
+                    border: 0;
+                    font: {
+                        size: 12px;
+                        weight:400;
+                        family: $font;
+                    }                                    
+                }
             }
     
             .select{
@@ -48,7 +60,7 @@
                 label{
                     float: left;
                     font: {
-                        size: 11px;
+                        size: 12px;
                         weight:400;
                         family: $font;
                     }
@@ -68,7 +80,7 @@
                     select{
                         float: left;
                         width: calc(100% + 30px);
-                        padding: 5px 0 0;
+                        padding: 5px 0;
                         border: 0;
                         background-color: transparent;
                         font: {
@@ -79,7 +91,66 @@
                     }
                 }
                 
-            }                            
+            } 
+            
+            .phone{
+                float: left;
+                width: 100%;
+                position: relative;
+                padding: 5px;
+                border: solid 1px rgba(0,0,0,0.2);
+    
+                label{
+                    float: left;
+                    font: {
+                        size: 12px;
+                        weight:400;
+                        family: $font;
+                    }
+                    margin-left: 3px;
+                    color: #555;
+                }
+                
+                .phone-slot{
+                    float: left;
+                    width: 100%;
+                
+                    .code-drop{
+                        float: left;
+                        width: 100px;
+                        // overflow: hidden;
+                        // background-image: url(../img/expand_more.svg);
+                        // background-size: 20px;
+                        // background-position: 100% 4px;
+                        // background-repeat: no-repeat;
+        
+                        select{
+                            float: left;
+                            width: 100%;
+                            padding: 5px 0;
+                            border: 0;
+                            background-color: transparent;
+                            font: {
+                                size: 12px;
+                                weight:400;
+                                family: $font;
+                            }                                    
+                        }
+                    }
+                    
+                    input{
+                        float: left;
+                        width: calc(100% - 100px);
+                        padding: 8px 4px 3px;
+                        border: 0;
+                        font: {
+                            size: 12px;
+                            weight:400;
+                            family: $font;
+                        }                                    
+                    }
+                }
+            }  
         }
     }
 
@@ -100,6 +171,22 @@
             padding: 13px;
             border: 0;
             cursor: pointer;
+            text-transform: uppercase;
+
+            &.save-btn{
+                float: left;
+                width: calc(50% - 5px);
+                color: #FFF;
+                background-color: #FF5500;
+                border: solid 1px #FF5500;
+            }
+            &.cancel-btn{
+                float: right;
+                width: calc(50% - 5px);
+                color: #000;
+                background-color: #e5e5e5;
+                border: solid 1px #e5e5e5;
+            }
         }
     }
 

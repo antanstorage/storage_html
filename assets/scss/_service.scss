@@ -1,0 +1,165 @@
+@mixin service(){
+    .service-block{
+        float: left;
+        width: 100%;
+        margin-top: 10px;
+                
+        .title{
+            float: left;
+            width: 100%;
+            font: {
+                size: 12px;
+                weight: 400;
+                family: $font;
+            }
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .service-data{
+            float: left;
+            width: 100%;
+
+            .block{
+                float: left;
+                width: calc((100% - 20px) / 3);
+                margin-right: 10px;
+                margin-bottom: 10px;
+
+                &:nth-child(3n+3){
+                    margin-right: 0;
+                }
+
+                label{
+                    float: left;
+                    width: 100%;
+                    cursor: pointer;
+                    user-select: none;                                    
+
+                    input[type="radio"]{
+                        display: none;
+        
+                        &:checked ~ .data{
+                            border-color: darkgray;
+                            background-color: #f1f1f1;
+
+                            .radio{
+                                background-color: green;
+                                border: solid 1px darkgreen;
+                                
+                                &::after{
+                                    display: block;
+                                    border: solid 1px darkgreen;
+                                }
+                            }
+                        }
+        
+                    }
+
+                                                        
+
+                    input[type="checkbox"]{
+                        display: none;
+        
+                        &:checked ~ .data{
+                            border-color: darkgray;
+                            background-color: #f1f1f1;
+
+                            .checkbox{
+                                background-color: green;
+                                border: solid 1px darkgreen;
+                                
+                                &::after{
+                                    display: block;
+                                }
+                            }
+                        }
+        
+                    }
+
+                    .data{
+                        float: left;
+                        width: 100%;
+                        padding: 5px;
+                        border-radius: 5px;
+                        border: solid 1px lightgray;
+
+                        .radio{
+                            float: left;
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 100%;
+                            background-color: lightgray;
+                            border: solid 1px darkgray;
+                            position: relative;
+            
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                width: 8px;
+                                height: 8px;
+                                background-color: #FFF;
+                                left: 2px;
+                                top: 2px;
+                                border-radius: 100%;
+                                border: solid 1px darkgray;
+                                display: none;
+                            }
+                        }
+
+                        .checkbox{
+                            float: left;
+                            width: 16px;
+                            height: 16px;
+                            background-color: lightgray;
+                            border: solid 1px darkgray;
+                            position: relative;
+                            border-radius: 3px;
+            
+                            &::after{
+                                content: "\2713";
+                                position: absolute;
+                                color: #FFF;
+                                left: 3px;
+                                top: -2px;
+                                font-size: 12px;
+                                display: none;
+                                text-shadow: 0 0 2px rgba(0,0,0,1);
+                            }
+                        }
+
+                        .content{
+                            float: left;
+                            width: calc(100% - 20px);
+                            padding-left: 10px;
+
+                            .title{
+                                float: left;
+                                width: 100%;
+                                font: {
+                                    size: 12px;
+                                    weight: 400;
+                                    family: $font;
+                                }
+                                color: #000;
+                                margin-bottom: 0;
+                            }
+                            .price{
+                                float: left;
+                                width: 100%;
+                                font: {
+                                    size: 14px;
+                                    weight: 500;
+                                    family: $font;
+                                }
+                                color: #000;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }                            
+        }
+    }
+    @content;
+}

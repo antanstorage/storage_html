@@ -1,0 +1,68 @@
+@mixin switch(){
+
+    .switch {
+        height: 18px;
+        border-radius: 18px;
+        position: relative;
+        aspect-ratio: 2;
+    }
+    .switch input[type="checkbox"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .switch input[type="radio"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .switch ._btn:before,
+    .switch ._btn:after {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 150px;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+    .switch ._btn:before {
+        top: 0;
+        min-height: 100%;
+        min-width: 100%;
+        background-color: lightgray;
+        transition-delay: 0.1s;
+    }
+    .switch ._btn:after {
+        top: 50%;
+        left: 3px;
+        transform: translateY(-50%);
+        background-color: white;
+        min-height: calc(100% - 6px);
+        aspect-ratio: 1;
+    }
+    .switch input[type="checkbox"]:checked ~ ._btn:after {
+        left: calc(100% - 18px + 3px);
+        background-color: white;
+    }
+    .switch input[type="checkbox"]:checked ~ ._btn:before {
+        background-color: green;
+    }
+    .switch input[type="radio"]:checked ~ ._btn:after {
+        left: calc(100% - 18px + 3px);
+        background-color: white;
+    }
+    .switch input[type="radio"]:checked ~ ._btn:before {
+        background-color: green;
+    }
+    
+
+    @content;
+}

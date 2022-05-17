@@ -1,4 +1,8 @@
 @import '_input.scss';
+@import '_card.scss';
+@import '_switch.scss';
+@import '_radio.scss';
+@import '_service.scss';
 
 $font: 'Work Sans', sans-serif;
 
@@ -14,6 +18,9 @@ body{
 }
 *:focus{
     outline: none;
+}
+.overflow{
+    overflow: hidden;
 }
 .__sst_body{
     float: left;
@@ -311,6 +318,7 @@ body{
                         float: left;
                         width: 100%;
                     }
+                    
 
                     .head-block{
                         float: left;
@@ -375,9 +383,30 @@ body{
                                 margin-right: 0;
                             }
 
-                            @media (max-width: 768px){
+                            @media (max-width: 1024px){
+                                width: calc((100% - 15px) / 2);
+                                margin-right: 15px;                                
+    
+                                &:nth-child(3n+3){
+                                    margin-right: 15px;
+                                }
+
+                                &:nth-child(2n+2){
+                                    margin-right: 0;
+                                }
+                            }
+
+                            @media (max-width: 680px){
                                 width: 100%;
-                                margin-right: 0;
+                                margin-right: 0;                                
+    
+                                &:nth-child(3n+3){
+                                    margin-right: 0;
+                                }
+
+                                &:nth-child(2n+2){
+                                    margin-right: 0;
+                                }
                             }
 
                             &:hover{
@@ -598,6 +627,7 @@ body{
                                 .select{
                                     float: left;
                                     width: 44px;
+                                    display: none;
 
                                     select{
                                         float: left;
@@ -630,7 +660,8 @@ body{
 
                                     &.add{
                                         float: right;
-                                        width: calc((100% - 64px) / 2);
+                                        // width: calc((100% - 64px) / 2);
+                                        width: calc(50% - 5px);
                                         margin-left: 10px;
                                         text-decoration: none;
 
@@ -646,9 +677,10 @@ body{
                                     }
 
                                     &.reserve{
-                                        float: right;
-                                        width: calc((100% - 64px) / 2);
-                                        margin-left: 10px;
+                                        float: left;
+                                        // width: calc((100% - 64px) / 2);                                        
+                                        width: calc(50% - 5px);
+                                        margin-left: 0;
                                         background-color: #FFF;
                                         color: #000;
                                         border: solid 1px rgba(0,0,0,0.1);
@@ -672,6 +704,16 @@ body{
                 z-index: 30;
                 display: none;
 
+                @media (max-width: 1366px){
+                    overflow: auto;
+                    padding-bottom: 2%;
+                }
+                
+
+                @media (max-width: 680px){
+                    padding-bottom: 8%;
+                }
+
                 .bg_black{
                     position: fixed;
                     width: 100%;
@@ -683,12 +725,176 @@ body{
 
                 .block{
                     position: relative;
-                    width: 40%;
+                    width: 50%;
                     background-color: #ffffff;
                     z-index: 3;
                     top: 15%;
                     border-radius: 5px;
                     box-shadow: 0 0 5px rgba(0,0,0,0.5);
+
+                    @media (max-width: 1366px){
+                        width: 70%;
+                        top: 2%;
+                        border-radius: 0;
+                    }
+
+                    @media (max-width: 768px){
+                        width: 94%;
+                    }
+
+
+                    @include service(){
+                        .service-block{
+                            padding: 10px 10px 0;
+                            margin-top: 0;
+                            
+                            .service-data{
+
+                                .block{
+                                    box-shadow: unset;
+                                    height: auto;
+
+                                    &:nth-last-child(-n+3){
+                                        margin-bottom: 0;
+                                    } 
+
+                                    @media (max-width: 680px){
+                                        width: 100%;
+                                        margin-right: 0;
+                                        margin-bottom: 10px;
+
+                                        &:nth-last-child(-n+3){
+                                            margin-bottom: 10px;
+                                        } 
+                                    }
+
+                                    label{
+
+                                        .data{
+                                            border-radius: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .insurance-list{
+                        float: left;
+                        width: 100%;
+
+                        .title {
+                            float: left;
+                            width: 100%;
+                            font-size: 12px;
+                            font-weight: 400;
+                            font-family: "Work Sans",sans-serif;
+                            color: #000;    
+                            margin-top: 10px;
+                            margin-bottom: -5px;
+                            padding: 0 10px;
+                        }
+
+                        .block{
+                            float: left;
+                            width: 100%;
+                            height: auto;
+                            padding: 10px 10px 0;
+                            box-shadow: unset;
+                            display: flex;
+                            background-color: transparent;
+
+                            
+
+                            @media (max-width: 680px){
+                                display: block;
+                            }
+    
+                            .plan-data{
+                                float: left;
+                                width: calc((100% - 30px) / 4);
+                                border: solid 1px #CCC;
+                                margin-right: 10px;
+                                padding: 5px 0;
+    
+                                &:last-child{
+                                    margin-right: 0;
+                                }                               
+
+                                @media (max-width: 680px){
+                                    width: 100%;
+                                    margin-right: 0;
+                                    margin-bottom: 10px;
+
+                                    &:last-child{
+                                        margin-bottom: 0;
+                                    } 
+                                }
+    
+                                @include radio(){
+                                    .radio-opt{
+                                        width: 100%;
+    
+                                        label{
+    
+                                            span{
+                                                width: calc(100% - 24px);
+                                                font-size: 12px;
+                                                text-transform: uppercase;
+                                                margin-top: 0;
+                                                margin-left: 0;
+                                                padding-left: 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+    
+                        .insurance-form{
+                            float: left;
+                            width: 100%;
+                            padding: 10px 10px 0;
+                            margin-top: 0;
+                            display: none;
+
+                            @include inputs(){
+
+                                .input-block{
+
+                                    .block{
+                                        padding: 0;
+                                        width: calc((100% - 30px) / 4);
+                                        margin-right: 10px;
+                                        margin-bottom: 0;
+                                        height: auto;
+                                        
+                                        &:nth-child(4n+4){
+                                            margin-right: 0;
+                                        }                                        
+
+                                        &:nth-last-child(-n+2){
+                                            margin-bottom: 0;
+                                        }
+
+                                        .input{
+                                            label{
+                                                text-transform: uppercase;
+                                            }
+                                        }
+                                    }
+
+                                    &:first-child{
+                                        .block{
+                                            width: 100%;
+                                            margin-bottom: 10px;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
 
                     .product-cycle{
                         float: right;
@@ -698,6 +904,7 @@ body{
                             float: left;
                             width: 100%;
                             padding: 10px;
+                            box-shadow: unset;
         
                             .form-block{
                                 float: left;
@@ -705,12 +912,21 @@ body{
         
                                 .input-block{
                                     float: left;
-                                    width: calc((100% - 10px) / 2);
+                                    width: calc((100% - 30px) / 4);
                                     margin-bottom: 10px;
                                     margin-right: 10px;
 
-                                    &:nth-child(2n+2){
+                                    &:nth-child(4n+4){
                                         margin-right: 0;
+                                    }
+                                    @media (max-width: 680px){
+                                        width: 100%;
+                                        margin-right: 0;
+                                        margin-bottom: 10px;
+    
+                                        &:last-child{
+                                            margin-bottom: 0;
+                                        } 
                                     }
         
                                     .input{
@@ -834,6 +1050,15 @@ body{
                                 .btn{
                                     float: left;
                                     width: 100%;
+
+                                    @media (max-width: 680px){
+                                        position: sticky;
+                                        left: 0;
+                                        bottom: -31px;
+                                        background-color: #FFF;
+                                        padding: 10px 0;
+                                        margin-bottom: 0px;
+                                    }
         
                                     .add-btn{
                                         float: left;
@@ -849,6 +1074,10 @@ body{
                                         padding: 10px;
                                         cursor: pointer;
                                         border: solid 1px #FF5500;
+
+                                        @media (max-width: 680px){
+                                            width: calc(50% - 5px);
+                                        }
                                     }
         
                                     .cancel-btn{
@@ -865,10 +1094,66 @@ body{
                                         padding: 10px;
                                         border: solid 1px rgba(0,0,0,0.2);
                                         cursor: pointer;
+
+                                        @media (max-width: 680px){
+                                            width: calc(50% - 5px);
+                                        }
                                     }
                                 }
         
                                 
+                            }
+                        }
+                    }
+
+                    
+                }
+            }
+
+            .mobile_sort{
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                left: 0;
+                top: 20%;
+                z-index: 30;
+                display: none;
+
+                .bg_black{
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background-color: rgba(0,0,0,0.6);
+                }
+
+                .block{
+                    position: relative;
+                    width: 90%;
+                    background-color: #ffffff;
+                    z-index: 3;
+                    border-radius: 5px;
+                    padding: 10px;
+                    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+
+                    .sort-block{
+                        float: left;
+                        width: 100%;
+
+                        @include radio(){
+                            .radio-opt{
+                                label{
+                                    span{
+                                        width: calc(100% - 24px);
+                                        margin-left: 0;
+                                        padding-left: 10px;
+                                        font-size: 12px;
+                                    }
+                                }
                             }
                         }
                     }
@@ -958,6 +1243,20 @@ body{
                     float: left;
                     width: 45%;
 
+                    .imgslide{
+                        float: left;
+                        width: 360px;
+                        height: 360px;
+
+                        img{
+                            float: left;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                            object-position: center;
+                        }
+                    }
+
                     .slider{
                         float: left;
                         width: 100%;
@@ -982,6 +1281,42 @@ body{
                                 border: solid 1px rgba(0,0,0,0.2);
                             }
                         }
+
+                        button{
+                            margin: 0;
+                            padding: 0;
+                            background: none;
+                            border: none;
+                            border-radius: 0;
+                            outline: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                          }
+                          .slide-arrow{
+                            position: absolute;
+                            top: 50%;
+                            margin-top: -15px;
+                          }
+                          .prev-arrow{
+                            left: 40px;
+                            width: 0;
+                            height: 0;
+                            border-left: 0 solid transparent;
+                            border-right: 15px solid #113463;
+                            border-top: 10px solid transparent;
+                            border-bottom: 10px solid transparent;
+                            z-index: 1;
+                          }
+                          .next-arrow{
+                            right: 40px;
+                            width: 0;
+                            height: 0;
+                            border-right: 0 solid transparent;
+                            border-left: 15px solid #113463;
+                            border-top: 10px solid transparent;
+                            border-bottom: 10px solid transparent;
+                          }
                     }
 
                     
@@ -1100,6 +1435,10 @@ body{
                                 }
                             }
                         }
+                    }
+
+                    @include service(){
+
                     }
                 }
                 .amenities-block{
@@ -2889,11 +3228,22 @@ body{
                                 float: left;
                                 width: 100%;
                                 font: {
-                                    size: 13px;
+                                    size: 16px;
                                     weight: 400;
                                     family: $font;
                                 }
                                 color: #000;
+                            }
+                            .phone{
+                                float: left;
+                                width: 100%;
+                                font: {
+                                    size: 13px;
+                                    weight: 300;
+                                    family: $font;
+                                }
+                                color: #000;
+                                margin-top: 5px;
                             }
                             .location{
                                 float: left;
@@ -2973,6 +3323,516 @@ body{
             .profile-right{
                 float: right;
                 width: calc(70% - 20px);
+
+                .profile-block{
+                    float: left;
+                    width: 100%;
+                    background-color: #FFF;
+                    border:solid 1px rgba(0,0,0,0.1);
+                    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+                    padding: 0 10px;
+
+                    .head{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+                        border-bottom: solid 1px rgba(0,0,0,0.1);
+
+                        .title{
+                            float: left;
+                            font: {
+                                size: 15px;
+                                weight:500;
+                                family:$font;
+                            }
+                            color: #000;
+                        }
+                    }
+                    .block{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+
+                        .profile-image{
+                            float: left;
+                            width: 200px;
+                            position: relative;
+
+                            .image{
+                                float: left;
+                                width: 100%;
+                                border: solid 1px #ababab;
+
+                                .img{
+                                    float: left;
+                                    width: 100%;
+
+                                    img{
+                                        float: left;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            .upload{
+                                position: absolute;
+                                right: 0;
+                                bottom: 0;
+                                background-color: rgba(0,0,0,0.6);
+                                padding: 5px 10px;
+                                cursor: pointer;
+                                border-top-left-radius: 10px;
+
+                                input[type="file"]{
+                                    position: absolute;
+                                    width: 100%;
+                                    opacity: 0;
+                                    filter: opacity(0);
+                                    cursor: pointer;
+                                }
+
+                                .icon{
+                                    float: left;
+                                    width: 24px;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+
+                        .profile-form{
+                            float: right;
+                            width: calc(100% - 220px);
+                            border-left: solid 1px #e5e5e5;
+                            padding-left: 20px;
+
+                            @include inputs(){
+                                .input-block{
+                                    .block{
+                                        padding: 0;
+                                    }
+                                }
+                            }
+
+                            .bottom-block{
+                                float: left;
+                                width: 100%;
+                                
+                                .btn-save{
+                                    float: left;
+                                    width: 100%;
+                                    font: {
+                                        size: 15px;
+                                        weight: 400;
+                                        family: $font;
+                                    }
+                                    color: #FFF;
+                                    background-color: #FF5500;
+                                    padding: 12px;
+                                    border: 0;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .address-block{
+                    float: left;
+                    width: 100%;
+                    background-color: #FFF;
+                    border:solid 1px rgba(0,0,0,0.1);
+                    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+                    padding: 0 10px;
+
+                    .head{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+                        border-bottom: solid 1px rgba(0,0,0,0.1);
+
+                        .title{
+                            float: left;
+                            font: {
+                                size: 15px;
+                                weight:500;
+                                family:$font;
+                            }
+                            color: #000;
+                        }
+                    }
+                    .block{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+
+                        .address-form{
+                            float: left;
+                            width: 100%;
+
+                            @include inputs(){
+                                .input-block{
+                                    width: calc(50% - 5px);
+
+                                    &:nth-child(2n+2){
+                                        float: right;
+                                    }
+                                    .block{
+                                        padding: 0;
+                                    }
+                                }
+                            }
+
+                            .bottom-block{
+                                float: left;
+                                width: 100%;
+                                
+                                .btn-save{
+                                    float: left;
+                                    width: 100%;
+                                    font: {
+                                        size: 15px;
+                                        weight: 400;
+                                        family: $font;
+                                    }
+                                    color: #FFF;
+                                    background-color: #FF5500;
+                                    padding: 12px;
+                                    border: 0;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .password-block{
+                    float: left;
+                    width: 100%;
+                    background-color: #FFF;
+                    border:solid 1px rgba(0,0,0,0.1);
+                    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+                    padding: 0 10px;
+
+                    .head{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+                        border-bottom: solid 1px rgba(0,0,0,0.1);
+
+                        .title{
+                            float: left;
+                            font: {
+                                size: 15px;
+                                weight:500;
+                                family:$font;
+                            }
+                            color: #000;
+                        }
+                    }
+                    .block{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+
+                        .password-form{
+                            float: left;
+                            width: 100%;
+
+                            @include inputs(){
+                                .input-block{
+
+                                    .block{
+                                        padding: 0;
+                                    }
+                                }
+                            }
+
+                            .bottom-block{
+                                float: left;
+                                width: 100%;
+                                
+                                .btn-save{
+                                    float: left;
+                                    width: 100%;
+                                    font: {
+                                        size: 15px;
+                                        weight: 400;
+                                        family: $font;
+                                    }
+                                    color: #FFF;
+                                    background-color: #FF5500;
+                                    padding: 12px;
+                                    border: 0;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .cards-block{
+                    float: left;
+                    width: 100%;
+                    background-color: #FFF;
+                    border:solid 1px rgba(0,0,0,0.1);
+                    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+                    padding: 0 10px;
+
+                    .head{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+                        border-bottom: solid 1px rgba(0,0,0,0.1);
+
+                        .back-icon{
+                            float: left;
+                            width: 18px;
+
+                            img{
+                                float: left;
+                                width: 100%;
+                            }
+                        }
+
+                        .title{
+                            float: left;
+                            font: {
+                                size: 15px;
+                                weight:500;
+                                family:$font;
+                            }
+                            color: #000;
+                        }
+
+                        .add-card{
+                            float: right;
+
+                            .icon{
+                                float: left;
+                                width: 16px;
+                            }
+                            span{
+                                float: left;
+                                font: {
+                                    size: 14px;
+                                    weight: 500;
+                                    family: $font;
+                                }
+                                color: #000;
+                            }
+                        }
+                    }
+                    .block{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+
+                        .card-slot{
+                            float: left;
+                            width: calc(50% - 10px);
+
+                            &:nth-child(2n+2){
+                                float: right;
+                            }
+
+                            .card{
+                                float: left;
+                                width: 100%;
+                        
+                                .block{
+                                    float: left;
+                                    width: 100%;
+                        
+                                    .view-block{
+                                        float: left;
+                                        width: 100%;
+                                        padding: 10px;
+                                        border: solid 1px #e5e5e5;
+                        
+                                        .img{
+                                            float: left;
+                                            width: 40px;
+                        
+                                            img{
+                                                float: left;
+                                                width: 100%;
+                                            }
+                                        }
+                        
+                                        .detail-block{
+                                            float: left;
+                                            width: calc(100% - 100px);
+                                            padding-left: 10px;
+                        
+                                            .name{
+                                                float: left;
+                                                width: 100%;
+                                                font: {
+                                                    size: 15px;
+                                                    weight: 400;
+                                                    family: $font;
+                                                }
+                                                color: #000;
+                                            }
+                        
+                                            .number{
+                                                float: left;
+                                                width: 100%;
+                                                font: {
+                                                    size: 15px;
+                                                    weight: 400;
+                                                    family: $font;
+                                                }
+                                                color: #000;
+                                            }
+                                        }
+
+                                        .action{
+                                            float: right;
+                                            margin-top: 9px;
+
+                                            .edit{
+                                                float: left;
+                                                width: 20px;
+                                                cursor: pointer;
+                                            }
+
+                                            .delete{
+                                                float: left;
+                                                width: 20px;
+                                                margin-left: 5px;
+                                                cursor: pointer;
+                                            }                                            
+                                        }
+                                    }
+                        
+                                    .form-block{
+                                        float: left;
+                                        width: 100%;
+                                        padding: 0;
+                                        border: solid 1px #e5e5e5;
+                                        border-top: 0;
+                        
+                                        table{
+                                            width: 100%;
+                                            tr{
+                                                td{
+                                                    height: 35px;
+                                                    padding: 0 10px;
+                                                    font: {
+                                                        size: 12px;
+                                                        weight: 400;
+                                                        family: $font;
+                                                    }
+
+                                                    &:last-child{
+
+                                                        @include switch(){
+                                                            .switch{
+                                                                float: right;
+                                                                margin-top: 3px;
+                                                            }
+                                                        }
+
+                                                        .icon{
+                                                            float: right;
+                                                            width: 24px;
+                                                            cursor: pointer;
+                                                        }
+                                                    }
+                                                }
+
+                        
+                                                &:last-child{
+                                                    td{
+                                                        border-bottom: 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .card-form{
+                            float: left;
+                            width: 100%;
+                            padding: 10px 0;
+
+                            @include inputs(){
+                                .input-block{
+                                    .block{
+                                        padding: 0;
+
+                                        label{
+                                            width: 100%;
+                                            text-transform: uppercase;
+                                        }
+
+                                        &.expire{
+                                            width: calc(50% - 5px);
+
+                                            input{
+                                                width: 50%;
+                                            }
+                                        }
+
+                                        &.cvv{
+                                            float: right;
+                                            width: calc(50% - 5px);
+
+                                            input{
+                                                width: 50%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .bottom-block{
+                                float: left;
+                                width: 100%;
+                                
+                                .btn-save{
+                                    float: left;
+                                    width: calc(50% - 5px);
+                                    font: {
+                                        size: 15px;
+                                        weight: 400;
+                                        family: $font;
+                                    }
+                                    color: #FFF;
+                                    background-color: #FF5500;
+                                    padding: 12px;
+                                    border: 0;
+                                    cursor: pointer;
+                                    border: solid 1px #FF5500;
+                                }
+                                
+                                .btn-cancel{
+                                    float: right;
+                                    width: calc(50% - 5px);
+                                    font: {
+                                        size: 15px;
+                                        weight: 400;
+                                        family: $font;
+                                    }
+                                    color: #000;
+                                    background-color: #FFF;
+                                    padding: 12px;
+                                    border: 0;
+                                    cursor: pointer;
+                                    border: solid 1px #e5e5e5;
+                                }
+                            }
+                        }
+                    }
+
+                }
 
                 .booked-product{
                     float: left;
@@ -3202,6 +4062,433 @@ body{
                     }
                 }
 
+                .booked-unit-breif{
+                    float: left;
+                    width: 100%;
+                    background-color: #FFF;
+                    border:solid 1px rgba(0,0,0,0.1);
+                    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+                    padding: 0 10px;
+
+                    .head{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+                        border-bottom: solid 1px rgba(0,0,0,0.1);
+
+                        .back-icon{
+                            float: left;
+                            width: 18px;
+
+                            img{
+                                float: left;
+                                width: 100%;
+                            }
+                        }
+
+                        .title{
+                            float: left;
+                            font: {
+                                size: 15px;
+                                weight:500;
+                                family:$font;
+                            }
+                            color: #000;
+                        }
+                    }
+
+                                   
+                    .block{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+                    
+                        .booked-block{
+                            float: left;
+                            width: 100%;
+                            background-color: #fff;
+                            position: relative;
+                            overflow: hidden;
+                            margin-right: 10px;
+                            border: solid 1px #e5e5e5;
+                            border-radius: 5px;
+                            box-shadow: 0 0 2px rgba(0,0,0,0.2);
+                            margin-bottom: 10px;
+                            position: relative;
+                            display: flex;
+
+                            .left-data{
+                                float: left;
+                                width: 200px;
+                                position: relative;                            
+
+                                .img-block{
+                                    float: left;
+                                    width: 200px;
+
+                                    .img{
+                                        float: left;
+                                        width: 100%;
+                                        background-color: #FFF;
+                                        border-bottom: solid 1px #e5e5e5;
+
+                                        img{
+                                            float: left;
+                                            width: 100%;
+                                            height: 150px;
+                                            object-fit: cover;
+                                            object-position: center;
+                                        }
+                                    }
+                                }
+
+                                .download-invoice{
+                                    float: left;
+                                    width: 200px;
+                                    padding: 10px;
+                                    
+                                    a{
+                                        display: block;
+
+                                        .icon{
+                                            float: left;
+                                            width: 30px;
+                                            margin-right: 5px;
+                                            margin-left: -2px;
+                                        }
+                                        span{
+                                            display: inline-block;
+                                            font: {
+                                                size: 14px;
+                                                weight: 400;
+                                                family: $font;
+                                            }
+                                            color: #000;
+                                            padding-top: 7px;
+                                        }
+                                    }
+                                }
+
+                                .btn{
+                                    position: absolute;
+                                    width: 100%;
+                                    left: 0;
+                                    bottom: 0;
+                                    padding: 10px;
+
+                                    .btn-paynow{
+                                        float: left;
+                                        width: 100%;
+                                        font: {
+                                            size: 14px;
+                                            weight: 500;
+                                            family: $font;
+                                        }
+                                        color: #FFF;
+                                        background-color: #FF5500;
+                                        border: 0;
+                                        padding: 10px;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+
+                            .right-data{
+                                float: left;
+                                width: calc(100% - 200px);
+                            
+                                .unit-data{
+                                    float: right;
+                                    width: 100%;
+                                    padding: 8px;
+                                    border-bottom: solid 1px #e5e5e5;
+
+                                    .unit-name{
+                                        float: left;
+                                        font: {
+                                            size: 18px;
+                                            weight: 600;
+                                            family: $font;
+                                        }
+                                        color: #000;
+                                    }
+                                    
+                                    .unit-info{
+                                        float: left;
+                                        font-size: 9px;
+                                        font-weight: 400;
+                                        font-family: $font;
+                                        color: #fff;
+                                        text-transform: uppercase;
+                                        background-color: #f50;
+                                        margin: 4px 0 0 5px;
+                                        border-radius: 5px;
+                                        padding: 2px;                                    
+                                    }
+
+                                    .unit-price{
+                                        float: right;
+                                        font: {
+                                            size: 18px;
+                                            weight: 600;
+                                            family: $font;
+                                        }
+                                        color: #000;
+                                    }
+
+                                    .unit-cycle{
+                                        float: left;
+                                        width: 100%;
+                                        font-size: 11px;
+                                        font-weight: 400;
+                                        font-family: $font;
+                                        color: #000;
+                                        margin: 5px 0 0 0;
+                                        padding: 2px; 
+                                    }
+                                }
+
+                                .content-data{
+                                    float: right;
+                                    width: 100%;
+                                    padding: 5px 10px;
+                                    border-left: solid 1px #e5e5e5;
+
+                                    .detail-data{
+                                        float: left;
+                                        width: 50%;
+
+                                        ul{
+                                            margin: 0;
+                                            padding: 0;
+
+                                            li{
+                                                display: block;
+
+                                                i{
+                                                    font-size: 10px;
+                                                    width: 20px;
+                                                }
+
+                                                span{                                                
+                                                    display: inline-block;
+                                                    font-size: 9px;
+                                                    font-weight: 400;
+                                                    font-family: $font;
+                                                    color: #000;
+                                                    text-transform: uppercase;
+                                                    border-radius: 5px;
+                                                    padding: 2px;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .movein-data{
+                                        float: left;
+                                        width: 100%;
+                                        margin-top: 5px;
+                                        padding-top: 5px;
+                                        border-top: solid 1px #e5e5e5;
+
+                                        ul{
+                                            margin: 0;
+                                            padding: 0;
+
+                                            li{
+                                                display: block;
+
+                                                i{
+                                                    font-size: 10px;
+                                                    width: 20px;
+                                                }
+
+                                                span{                                                
+                                                    display: inline-block;
+                                                    width: 40%;
+                                                    font-size: 11px;
+                                                    font-weight: 400;
+                                                    font-family: $font;
+                                                    color: #000;
+                                                    text-transform: uppercase;
+                                                    border-radius: 5px;
+                                                    padding: 5px 0;
+
+                                                    &::after{
+                                                        content: ":";
+                                                        float: right;
+                                                    }
+                                                }
+                                                p{
+                                                    float: right;
+                                                    font-size: 11px;
+                                                    font-weight: 400;
+                                                    font-family: $font;
+                                                    color: #000;
+                                                    text-transform: uppercase;
+                                                    border-radius: 5px;
+                                                    padding: 5px 0;
+                                                    margin: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .occupied-data{
+                                        float: left;
+                                        width: 50%;
+                                        margin-top: 5px;
+                                        padding-top: 5px;
+                                    
+
+                                        .title{
+                                            float: left;
+                                            width: 100%;
+                                            font: {
+                                                size: 10px;
+                                                weight: 400;
+                                                family: $font;
+                                            }
+                                            color: #000;
+                                            margin-bottom: 3px;
+                                        }
+
+                                        .days{
+                                            float: left;
+                                            width: 100%;
+                                            font: {
+                                                size: 18px;
+                                                weight: 600;
+                                                family: $font;
+                                            }
+                                            color: #000;
+                                        }
+                                    }
+
+                                    .services-data{
+                                        float: left;
+                                        width: 100%;
+                                        margin-top: 5px;
+                                        padding-top: 5px;
+                                        border-top: solid 1px #e5e5e5;
+                                    
+
+                                        .title{
+                                            float: left;
+                                            width: 100%;
+                                            font: {
+                                                size: 14px;
+                                                weight: 400;
+                                                family: $font;
+                                            }
+                                            color: #000;
+                                        }
+
+                                        .list{
+                                            float: left;
+                                            width: 100%;
+
+                                            ul{
+                                                margin: 0;
+                                                padding: 0;
+
+                                                li{
+                                                    display: block;
+                                                    list-style: none;
+                                                    padding: 10px 0;
+
+                                                    &:nth-child(4n+4){
+                                                        margin-right: 0;
+                                                    }
+
+                                                    .icon{
+                                                        float: left;
+                                                        width: 16px;
+                                                        margin-right: 4px;
+                                                        margin-top: 2px;
+                                                    }
+
+                                                    span{
+                                                        display: inline-block;
+                                                        font: {
+                                                            size: 12px;
+                                                            weight: 300;
+                                                            family: $font;
+                                                        }
+                                                        color: #000;
+                                                    }
+
+                                                    p{
+                                                        float: right;
+                                                        font: {
+                                                            size: 14px;
+                                                            weight: 500;
+                                                            family: $font;
+                                                        }
+                                                        color: #000;
+                                                        margin: 0;
+                                                    }
+
+
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .total-data{
+                                        float: left;
+                                        width: calc(100% + 20px);
+                                        margin: {
+                                            top: 5px;
+                                            left: -10px;
+                                            bottom: -5px;
+                                        }
+                                        padding: 5px 10px 0;
+                                        background-color: #f2f2f2;
+                                        border-top: solid 1px #e5e5e5;
+
+                                        table{
+                                            width: 100%;
+
+                                            tr{
+                                                td{
+                                                    height: 25px;
+                                                    font: {
+                                                        size: 12px;
+                                                        weight: 400;
+                                                        family: $font;
+                                                    }
+                                                    color: #000;
+
+                                                    &:last-child{
+                                                        text-align: right;
+                                                        font-size: 14px;
+                                                    }
+                                                }
+
+                                                &:last-child{
+                                                    td{
+                                                        border-top: solid 1px #e3e3e3;
+                                                        height: 35px;
+                                                        font: {
+                                                            size: 15px;
+                                                            weight: 500;
+                                                            family: $font;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+
+                                
+                            }
+                        }
+                    }
+                }
+
                 .unit-invoice{
                     float: left;
                     width: 100%;
@@ -3402,15 +4689,21 @@ body{
                                     padding: 10px 0 0;
                                     margin-top: 10px;
 
-                                    &.invoice{
+                                    &.paid-invoice{
                                         padding: 0;
+
+                                        .download-invoice{                                            
+                                            margin-top: 5px;
+                                            padding-top: 5px;
+                                            width: 100%;
+                                        }
                                     }
 
                                     .download-invoice{
                                         float: left;
-                                        width: 100%;
-                                        margin-top: 5px;
-                                        padding-top: 5px;
+                                        width: calc(50% - 5px);
+                                        margin-top: 0;
+                                        padding-top: 0;
                                         
                                         a{
                                             display: block;
@@ -3435,8 +4728,8 @@ body{
                                     }
 
                                     .pay-now{
-                                        float: left;
-                                        width: 100%;
+                                        float: right;
+                                        width: calc(50% - 5px);
                                         font: {
                                             size: 14px;
                                             weight: 400;
@@ -3451,6 +4744,103 @@ body{
                                     }
                                 }                                   
                                 
+                            }
+                        }
+                    }
+                }
+
+                .insurance-plans{
+                    float: left;
+                    width: 100%;
+                    background-color: #FFF;
+                    border:solid 1px rgba(0,0,0,0.1);
+                    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+                    padding: 0 10px;
+
+                    .head{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+                        border-bottom: solid 1px rgba(0,0,0,0.1);
+
+                        .title{
+                            float: left;
+                            font: {
+                                size: 15px;
+                                weight:500;
+                                family:$font;
+                            }
+                            color: #000;
+                        }
+                    }
+
+                                   
+                    .block{
+                        float: left;
+                        width: 100%;
+                        padding: 10px 0;
+
+                        .plan-data{
+                            float: left;
+                            width: 100%;
+                            border: solid 1px #e5e5e5;
+                            box-shadow: 0 0 2px rgba(0,0,0,0.2);
+                            margin-bottom: 10px;
+                            padding: 5px 0;
+
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+
+                            @include radio(){
+                                .radio-opt{
+                                    width: 100%;
+
+                                    label{
+
+                                        span{
+                                            text-transform: uppercase;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .insurance-form{
+                                float: left;
+                                width: 100%;
+                                padding: 10px 10px 5px;
+                                margin-top: 5px;
+                                border-top: solid 1px #e5e5e5;
+                                display: none;
+
+                                @include inputs(){
+
+                                    .input-block{
+
+                                        &:first-child{
+                                            .block{
+                                                width: 100%;
+                                            }
+                                        }
+
+                                        .block{
+                                            padding: 0;
+                                            width: calc(50% - 5px);
+                                            
+
+                                            &:nth-child(2n+2){
+                                                float: right;
+                                            }
+
+                                            .input{
+                                                label{
+                                                    text-transform: uppercase;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
                             }
                         }
                     }

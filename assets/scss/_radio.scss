@@ -1,0 +1,64 @@
+@mixin radio(){
+
+    .radio-opt{
+        float: left;
+
+        label{
+            float: left;
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+
+            input[type="radio"]{
+                display: none;
+
+                &:checked ~ .radio{
+                    background-color: green;
+                    border: solid 1px darkgreen;
+                    
+                    &::after{
+                        display: block;
+                        border: solid 1px darkgreen;
+                    }
+                }
+
+            }
+            .radio{
+                float: left;
+                width: 24px;
+                height: 24px;
+                border-radius: 100%;
+                background-color: lightgray;
+                border: solid 1px darkgray;
+                position: relative;
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 12px;
+                    height: 12px;
+                    background-color: #FFF;
+                    left: 4px;
+                    top: 4px;
+                    border-radius: 100%;
+                    border: solid 1px darkgray;
+                    display: none;
+                }
+            }
+            span{
+                float: left;
+                font-size: 14px;
+                font-weight: 400;
+                font-family: $font;
+                color: #000;
+                margin: {
+                    top: 5px;
+                    left: 10px;
+                }
+            }
+        }
+    }
+    
+
+    @content;
+}

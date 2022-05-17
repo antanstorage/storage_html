@@ -7,13 +7,21 @@ $(function(){
         $('#filter-mobile').hide();
     });
 
+    $('.open-sort').on('click', function(){
+        $('#mobile-sort').show();
+    })
+    $('.close-mobile-sort').on('click', function(){
+        $('#mobile-sort').hide();
+    })
 
 
     $('.add-basket').on('click', function(){
-        $('#product_basket').fadeIn();
+        $('#product_basket').fadeIn();        
+        $('body').addClass('overflow');
     });
     $('.close-basket').on('click', function(){
-        $('#product_basket').fadeOut();
+        $('#product_basket').fadeOut();        
+        $('body').removeClass('overflow');
     });
 
 
@@ -24,9 +32,17 @@ $(function(){
         $(this).parents('.cart-form').slideUp(0);
     });
 
-
     $('.payment-form .section-slot .head').on('click', function(){
         $('.payment-access .payment-form .section-slot .slot').not('#'+$(this).attr('data-payment')).slideUp();
         $('#'+$(this).attr('data-payment')).slideDown();
     });
+
+    $(".insurance-list input[type='radio']").on('click', function(){
+        if($(this).val() == 4){
+            $('.insurance-form').show();
+        }else{
+            $('.insurance-form').hide();
+        }
+    });
+    
 });
