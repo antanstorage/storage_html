@@ -44,5 +44,22 @@ $(function(){
             $('.insurance-form').hide();
         }
     });
+
+    $('.open-signup').on('click', function(){
+        $('#signup').css('display', 'flex');
+        $('#login').hide();
+    });
+
+    $('.open-login').on('click', function(){
+        $('#login').css('display', 'flex');
+        $('#signup').hide();
+    });
+    
+
+    $('#open-login').on('click', function(){
+        $('.user-access-portal').show();
+        $('#login').css('display', 'flex');
+        $('#signup').hide();
+    });
     
 });

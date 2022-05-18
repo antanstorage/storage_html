@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
-    <link rel="stylesheet" href="/assets/css/nouislider.css">
-    <link rel="stylesheet" href="/assets/css/sst_style.css">
-    <link rel="stylesheet" href="/assets/css/slick.css">
-    <link rel="stylesheet" href="/assets/css/slick-theme.css">
-    <script src="/assets/js/jquery-3.6.0.min.js"></script>
-    <script src="/assets/js/sst_storage.js"></script>
+    <link rel="stylesheet" href="./assets/css/nouislider.css">
+    <link rel="stylesheet" href="./assets/css/sst_style.css">
+    <link rel="stylesheet" href="./assets/css/slick.css">
+    <link rel="stylesheet" href="./assets/css/slick-theme.css">
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/sst_storage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
-    <script src="/assets/js/bezier.js"></script>
-    <script src="/assets/js/jquery.signaturepad.js"></script>
-    <script type='text/javascript' src="/assets/js/html2canvas.js"></script>
+    <script src="./assets/js/bezier.js"></script>
+    <script src="./assets/js/signature_pad.js"></script>
+    <script type='text/javascript' src="./assets/js/html2canvas.min.js"></script>
     <title>Document</title>    
 </head>
 
@@ -33,30 +33,39 @@
                 <div class="signature-block">
                     <div class="sst_signature-pad">
                         <div id="signatureArea" class="signatureArea" >
-                            <div style="height:auto;">
-                                <canvas id="signaturePad" width="300" height="100"></canvas>
-                            </div>
+                            <canvas id="signature" width="400" height="150"></canvas>
+                        </div>
+                        <div class="btn-section">
+                            <button class="clear" id="clear-signature">Clear</button>
+                            <button class="save-signature" id="btnSaveSignature">Save Signature</button>  
                         </div>        
-                        <button id="btnSaveSignature">Save Signature</button> 
-                        <button class="clearButton">Clear</button>       
+                             
                         
                         <script>
-                            $(document).ready(function() {
-                                $('#signatureArea').signaturePad({drawOnly:true, clear:'.clearButton', drawBezierCurves:true, lineTop:105});
-                            });
-                            
-                            $("#btnSaveSignature").click(function(e){
-                                html2canvas([document.getElementById('signaturePad')], {
-                                    onrendered: function (canvas) {
+                            jQuery(document).ready(function($){    
+                                var canva = document.getElementById("signature");
+                                var signaturePad = new SignaturePad(canva);
+                                
+                                $('#clear-signature').on('click', function(){
+                                    signaturePad.clear();
+                                });
+                                
+                                $("#btnSaveSignature").click(function(e){
+                                    html2canvas(document.getElementById('signature')).then((canvas) => {
                                         var canvas_img_data = canvas.toDataURL('image/png');
                                         var img_data = canvas_img_data.replace(/^data:image\/(png|jpg);base64,/, "");
                                         console.log(img_data);
                                         document.getElementById("canvasImage").src="data:image/gif;base64,"+img_data;
-                                    }
+                                    });
+                                    
+                                    setTimeout(function(){
+                                        location.href="./checkout.html";
+                                    },1000)
+                                    
                                 });
+                                
                             });
                           </script> 
-                          <p>Signature Image</p>
 
                           <img id="canvasImage" />
                     </div>
