@@ -61,5 +61,10 @@ $(function(){
         $('#login').css('display', 'flex');
         $('#signup').hide();
     });
+
+    $('.filter-plot .filter-slot .head').on('click', function(){
+        $(this).parents('.filter-slot').find('.slot-block').slideToggle();
+        $(this).toggleClass('active');
+    });
     
 });

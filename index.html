@@ -17,13 +17,14 @@
 <body>
     <div class="__sst_body">
         <div class="__sst_container">
-
-            <a href="./cart.html" class="cart-access">
-                <img src="./assets/img/garage_home.svg" alt="" class="icon">
-                <span>0</span>
-            </a>
-            <div class="user-account-access" id="open-login">
-                <img src="./assets/img/person.svg" alt="" class="icon">
+            <div class="_sst_menu">
+                <a href="./cart.html" class="cart-access">
+                    <img src="./assets/img/shopping_cart.svg" alt="" class="icon">
+                    <span>0</span>
+                </a>
+                <div class="user-access" id="open-login">
+                    <img src="./assets/img/person.svg" alt="" class="icon">
+                </div>
             </div>
 
             <div class="listing-section">
@@ -34,107 +35,234 @@
                         <div class="block">
                             <div class="head">
                                 <div class="title">Filter</div>
+                                <img src="./assets/img/filter_alt.svg" alt="" class="icon">
                                 <div class="sst_close_f">
                                     <i class="fa-light fa-xmark"></i>
                                     <span>Close</span>
                                 </div>
                             </div>
-
-                            <div class="filter-slot">
-                                <div class="title">Price</div>
-                                <div class="slot-block">
-                                    <div class="price-slider">
-                                        <div class="slider" id="slider-snap"></div>
-                                        <div class="inputs">
-                                            <span id="slider-snap-value-lower"></span>
-                                            <span id="slider-snap-value-upper"></span>
+                            <div class="filter-plot">
+                                <div class="filter-slot">
+                                    <div class="head">
+                                        <div class="title">Price</div>
+                                        <img src="./assets/img/expand_more.svg" alt="" class="icon-arrow">
+                                    </div>
+                                    
+                                    <div class="slot-block">
+                                        <div class="price-slider">
+                                            <div class="slider" id="slider-snap"></div>
+                                            <div class="inputs">
+                                                <span id="slider-snap-value-lower"></span>
+                                                <span id="slider-snap-value-upper"></span>
+                                            </div>
+                                            
                                         </div>
                                         
                                     </div>
-                                    
-                                </div>
-                            </div>
-                            
-                            <div class="filter-slot">
-                                <div class="title">Category</div>
-                                <div class="slot-block">
-                                    <div class="action">
-                                        <label>
-                                            <input type="checkbox" name="category" id="">
-                                            <div class="checkbox"></div>
-                                            <div class="name">Unit</div>
-                                        </label>
+                                </div>                                
+                                <div class="filter-slot">
+                                    <div class="head">
+                                        <div class="title">Categories</div>
+                                        <img src="./assets/img/expand_more.svg" alt="" class="icon-arrow">
+                                    </div>
+                                    <div class="slot-block">
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Unit</span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="filter-slot">
+                                    <div class="head">
+                                        <div class="title">Move In Date</div>
+                                        <img src="./assets/img/expand_more.svg" alt="" class="icon-arrow">
+                                    </div>
+                                    <div class="slot-block">
+                                        <div class="date">
+                                            <input type="date" name="" id="">
+                                        </div>
+                                    </div>
+                                </div>                                
+                                <div class="filter-slot">
+                                    <div class="head">
+                                        <div class="title">Location</div>
+                                        <img src="./assets/img/expand_more.svg" alt="" class="icon-arrow">
+                                    </div>
+                                    <div class="slot-block">
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Chennai</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Madurai</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter-slot">
+                                    <div class="head">
+                                        <div class="title">Building</div>
+                                        <img src="./assets/img/expand_more.svg" alt="" class="icon-arrow">
+                                    </div>
+                                    <div class="slot-block">
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Royce</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Millineum</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>                                
+                                <div class="filter-slot">
+                                    <div class="head">
+                                        <div class="title">Amenities</div>
+                                        <img src="./assets/img/expand_more.svg" alt="" class="icon-arrow">
+                                    </div>
+                                    <div class="slot-block">
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 1</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 2</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                        <div class="action">                                        
+                                            <label class="_sst_checkbox">
+                                                <input type="checkbox" name="category" id="">
+                                                <div class="_btn"></div>
+                                                <span>Amenity 3</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div class="filter-slot">
-                                <div class="title">Move in Date</div>
-                                <div class="slot-block">
-                                    <div class="date">
-                                        <input type="date" name="" id="">
-                                    </div>
+                                <div class="btn">
+                                    <button class="apply-filter">Apply Filter</button>
                                 </div>
                             </div>
-                            
-                            <div class="filter-slot">
-                                <div class="title">Location</div>
-                                <div class="slot-block">
-                                    <div class="action">
-                                        <label>
-                                            <input type="checkbox" name="location" id="">
-                                            <div class="checkbox"></div>
-                                            <div class="name">Chennai</div>
-                                        </label>
-                                    </div>
-                                    <div class="action">
-                                        <label>
-                                            <input type="checkbox" name="location" id="">
-                                            <div class="checkbox"></div>
-                                            <div class="name">Madurai</div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="filter-slot">
-                                <div class="title">Building</div>
-                                <div class="slot-block">
-                                    <div class="action">
-                                        <label>
-                                            <input type="checkbox" name="building" id="">
-                                            <div class="checkbox"></div>
-                                            <div class="name">Royce</div>
-                                        </label>
-                                    </div>
-                                    <div class="action">
-                                        <label>
-                                            <input type="checkbox" name="building" id="">
-                                            <div class="checkbox"></div>
-                                            <div class="name">Millineum</div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="filter-slot">
-                                <div class="title">Amenity</div>
-                                <div class="slot-block">
-                                    <div class="action">
-                                        <label>
-                                            <input type="checkbox" name="building" id="">
-                                            <div class="checkbox"></div>
-                                            <div class="name">Amenity 1</div>
-                                        </label>
-                                    </div>
-                                    <div class="action">
-                                        <label>
-                                            <input type="checkbox" name="building" id="">
-                                            <div class="checkbox"></div>
-                                            <div class="name">Amenity 2</div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                                
                         </div>
                     </div>
 
@@ -157,385 +285,364 @@
                         </div>
 
                         <div class="product-slot">
+
+                            <div class="product-plot">
+
+                                <div class="product">
+                                    <div class="img-block">                                    
+                                        <div class="more_option">
+                                            <ul>
+                                                <li>
+                                                    <i class="fa-light fa-camera-security"></i>
+                                                    <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-lock-keyhole"></i>
+                                                    <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-building-lock"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-truck"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-cart-flatbed-boxes"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-warehouse-full"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-temperature-list"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-credit-card-front"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="img"><img src="./assets/img/storage_temp.jpg" alt="" srcset=""></div>
+                                        <div class="discount">Discount Available</div>
+                                    </div>
+                                    <a href="/detail.html" target="_blank" class="content-block">
+                                        <div class="title">Lorem Ipsum is simply dummy</div>
+                                        <div class="info">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+                                    </a>
+                                    <div class="price-block">
+                                        <div class="sell-price">$99</div>
+                                        <div class="slash-price">$109</div>
+                                    </div>
+                                    <div class="unit-block">
+                                        <div class="unit-number">C25</div>
+                                        <div class="unit-size">10' x 10' x 12'</div>
+                                    </div>
+                                    <div class="bottom-block">
+                                        <a href="./detail.html" target="_blank" class="btn add"> Book</a>
+                                        <div class="btn reserve"> Reserve</div>
+                                    </div>
+                                </div>
+
+                                <div class="product">
+                                    <div class="img-block">                                    
+                                        <div class="more_option">
+                                            <ul>
+                                                <li>
+                                                    <i class="fa-light fa-camera-security"></i>
+                                                    <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-lock-keyhole"></i>
+                                                    <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-building-lock"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-truck"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-cart-flatbed-boxes"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-warehouse-full"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-temperature-list"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-credit-card-front"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="img"><img class="noimg" src="./assets/img/storage-unit.svg" alt="" srcset=""></div>
+                                        <div class="discount">Discount Available</div>
+                                    </div>
+                                    <a href="/detail.html" target="_blank" class="content-block">
+                                        <div class="title">Lorem Ipsum is simply dummy</div>
+                                        <div class="info">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+                                    </a>
+                                    <div class="price-block">
+                                        <div class="sell-price">$99</div>
+                                        <div class="slash-price">$109</div>
+                                    </div>
+                                    <div class="unit-block">
+                                        <div class="unit-number">C25</div>
+                                        <div class="unit-size">10' x 10' x 12'</div>
+                                    </div>
+                                    <div class="bottom-block">
+                                        <a href="./detail.html" target="_blank" class="btn add"> Book</a>
+                                        <div class="btn reserve"> Reserve</div>
+                                    </div>
+                                </div>
+
+                                <div class="product">
+                                    <div class="img-block">                                    
+                                        <div class="more_option">
+                                            <ul>
+                                                <li>
+                                                    <i class="fa-light fa-camera-security"></i>
+                                                    <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-lock-keyhole"></i>
+                                                    <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-building-lock"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-truck"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-cart-flatbed-boxes"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-warehouse-full"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-temperature-list"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-credit-card-front"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="img"><img src="./assets/img/storage_temp.jpg" alt="" srcset=""></div>
+                                    </div>
+                                    <a href="/detail.html" target="_blank" class="content-block">
+                                        <div class="title">Lorem Ipsum is simply dummy</div>
+                                        <div class="info">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+                                    </a>
+                                    <div class="price-block">
+                                        <div class="sell-price">$99</div>
+                                        <div class="slash-price">$109</div>
+                                    </div>
+                                    <div class="unit-block">
+                                        <div class="unit-number">C25</div>
+                                        <div class="unit-size">10' x 10' x 12'</div>
+                                    </div>
+                                    <div class="bottom-block">
+                                        <a href="./detail.html" target="_blank" class="btn add"> Book</a>
+                                        <div class="btn reserve"> Reserve</div>
+                                    </div>
+                                </div>
+
+                                <div class="product">
+                                    <div class="img-block">                                    
+                                        <div class="more_option">
+                                            <ul>
+                                                <li>
+                                                    <i class="fa-light fa-camera-security"></i>
+                                                    <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-lock-keyhole"></i>
+                                                    <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-building-lock"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-truck"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-cart-flatbed-boxes"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-warehouse-full"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-temperature-list"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-credit-card-front"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="img"><img src="./assets/img/storage_temp.jpg" alt="" srcset=""></div>
+                                        <div class="discount">Discount Available</div>
+                                    </div>
+                                    <a href="/detail.html" target="_blank" class="content-block">
+                                        <div class="title">Lorem Ipsum is simply dummy</div>
+                                        <div class="info">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+                                    </a>
+                                    <div class="price-block">
+                                        <div class="sell-price">$99</div>
+                                    </div>
+                                    <div class="unit-block">
+                                        <div class="unit-number">C25</div>
+                                        <div class="unit-size">10' x 10' x 12'</div>
+                                    </div>
+                                    <div class="bottom-block">
+                                        <div class="btn add add-basket"> Book</div>
+                                        <div class="btn reserve"> Reserve</div>
+                                    </div>
+                                </div>
+
+                                <div class="product">
+                                    <div class="img-block">                                    
+                                        <div class="more_option">
+                                            <ul>
+                                                <li>
+                                                    <i class="fa-light fa-camera-security"></i>
+                                                    <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-lock-keyhole"></i>
+                                                    <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-building-lock"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-truck"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-cart-flatbed-boxes"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-warehouse-full"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-temperature-list"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-credit-card-front"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="img"><img src="./assets/img/storage_temp.jpg" alt="" srcset=""></div>
+                                        <div class="discount">Discount Available</div>
+                                    </div>
+                                    <a href="/detail.html" target="_blank" class="content-block">
+                                        <div class="title">Lorem Ipsum is simply dummy</div>
+                                        <div class="info">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+                                    </a>
+                                    <div class="price-block">
+                                        <div class="sell-price">$99</div>
+                                        <div class="slash-price">$109</div>
+                                    </div>
+                                    <div class="unit-block">
+                                        <div class="unit-number">C25</div>
+                                        <div class="unit-size">10' x 10' x 12'</div>
+                                    </div>
+                                    <div class="bottom-block">
+                                        <div class="btn add add-basket"> Book</div>
+                                        <div class="btn reserve"> Reserve</div>
+                                    </div>
+                                </div>
+
+                                <div class="product">
+                                    <div class="img-block">                                    
+                                        <div class="more_option">
+                                            <ul>
+                                                <li>
+                                                    <i class="fa-light fa-camera-security"></i>
+                                                    <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-lock-keyhole"></i>
+                                                    <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-building-lock"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-truck"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-cart-flatbed-boxes"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-warehouse-full"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-temperature-list"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-light fa-credit-card-front"></i>
+                                                    <div class="more_text">Security</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="img"><img src="./assets/img/storage_temp.jpg" alt="" srcset=""></div>
+                                        <div class="discount">Discount Available</div>
+                                    </div>
+                                    <a href="/detail.html" target="_blank" class="content-block">
+                                        <div class="title">Lorem Ipsum is simply dummy</div>
+                                        <div class="info">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+                                    </a>
+                                    <div class="price-block">
+                                        <div class="sell-price">$99</div>
+                                        <div class="slash-price">$109</div>
+                                    </div>
+                                    <div class="unit-block">
+                                        <div class="unit-number">C25</div>
+                                        <div class="unit-size">10' x 10' x 12'</div>
+                                    </div>
+                                    <div class="bottom-block">
+                                        <div class="btn add add-basket"> Book</div>
+                                        <div class="btn reserve"> Reserve</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="load-more">Load More</button>
                             
-                            <div class="product">
-                                <div class="img-block">                                    
-                                    <div class="more_option">
-                                        <ul>
-                                            <li>
-                                                <i class="fa-light fa-camera-security"></i>
-                                                <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-lock-keyhole"></i>
-                                                <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-building-lock"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-truck"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-cart-flatbed-boxes"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-warehouse-full"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-temperature-list"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-credit-card-front"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="img"><img src="./assets/img/storage_temp.jpg" alt="" srcset=""></div>                            
-                                    <div class="storage-size">Small : W10 x L10 x H12</div>
-                                </div>
-                                <a href="/detail.html" target="_blank" class="content-block">
-                                    <div class="title">Climate Drive-Up Easy Access</div>
-                                    <div class="info">Excl. of (St. Louis County 7.74%)</div>
-                                </a>
-                                <div class="price-block">
-                                    <div class="sell-price">$89</div>
-                                    <div class="slash-price">$89</div>
-                                </div>
-                                <div class="bottom-block">
-                                    <div class="select">
-                                        <select name="" id="">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
-                                        </select>
-                                    </div>
-                                    <div class="btn add add-basket"> Book</div>
-                                    <div class="btn reserve"> Reserve</div>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="img-block">                                    
-                                    <div class="more_option">
-                                        <ul>
-                                            <li>
-                                                <i class="fa-light fa-camera-security"></i>
-                                                <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-lock-keyhole"></i>
-                                                <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-building-lock"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-truck"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-cart-flatbed-boxes"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-warehouse-full"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-temperature-list"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-credit-card-front"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="img"><img src="./assets/img/storage_temp.jpg" alt="" srcset=""></div>                            
-                                    <div class="storage-size">Small : W10 x L10 x H12</div>
-                                </div>
-                                <a href="/detail.html" target="_blank" class="content-block">
-                                    <div class="title">Climate Drive-Up Easy Access</div>
-                                    <div class="info">Excl. of (St. Louis County 7.74%)</div>
-                                </a>
-                                <div class="price-block">
-                                    <div class="sell-price">$89</div>
-                                    <div class="slash-price">$89</div>
-                                </div>
-                                <div class="bottom-block">
-                                    <div class="select">
-                                        <select name="" id="">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
-                                        </select>
-                                    </div>
-                                    <a href="/detail.html" target="_blank" class="btn add"> Book</a>
-                                    <div class="btn reserve"> Reserve</div>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="img-block">                                    
-                                    <div class="more_option">
-                                        <ul>
-                                            <li>
-                                                <i class="fa-light fa-camera-security"></i>
-                                                <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-lock-keyhole"></i>
-                                                <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-building-lock"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-truck"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-cart-flatbed-boxes"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-warehouse-full"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-temperature-list"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-credit-card-front"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="img"><img class="noimg" src="./assets/img/storage-unit.svg" alt="" srcset=""></div>                            
-                                    <div class="storage-size">Small : W10 x L10 x H12</div>
-                                </div>
-                                <a href="/detail.html" target="_blank" class="content-block">
-                                    <div class="title">Climate Drive-Up Easy Access</div>
-                                    <div class="info">Excl. of (St. Louis County 7.74%)</div>
-                                </a>
-                                <div class="price-block">
-                                    <div class="sell-price">$89</div>
-                                    <div class="slash-price">$89</div>
-                                </div>
-                                <div class="bottom-block">
-                                    <div class="select">
-                                        <select name="" id="">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
-                                        </select>
-                                    </div>
-                                    <div class="btn add"> Book</div>
-                                    <div class="btn reserve"> Reserve</div>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="img-block">                                    
-                                    <div class="more_option">
-                                        <ul>
-                                            <li>
-                                                <i class="fa-light fa-camera-security"></i>
-                                                <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-lock-keyhole"></i>
-                                                <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-building-lock"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-truck"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-cart-flatbed-boxes"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-warehouse-full"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-temperature-list"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-credit-card-front"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="img"><img src="./assets/img/storage_temp.jpg" alt="" srcset=""></div>                            
-                                    <div class="storage-size">Small : W10 x L10 x H12</div>
-                                </div>
-                                <a href="/detail.html" target="_blank" class="content-block">
-                                    <div class="title">Climate Drive-Up Easy Access</div>
-                                    <div class="info">Excl. of (St. Louis County 7.74%)</div>
-                                </a>
-                                <div class="price-block">
-                                    <div class="sell-price">$89</div>
-                                    <div class="slash-price">$89</div>
-                                </div>
-                                <div class="bottom-block">
-                                    <div class="select">
-                                        <select name="" id="">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
-                                        </select>
-                                    </div>
-                                    <div class="btn add"> Book</div>
-                                    <div class="btn reserve"> Reserve</div>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="img-block">                                    
-                                    <div class="more_option">
-                                        <ul>
-                                            <li>
-                                                <i class="fa-light fa-camera-security"></i>
-                                                <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-lock-keyhole"></i>
-                                                <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-building-lock"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-truck"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-cart-flatbed-boxes"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-warehouse-full"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-temperature-list"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-credit-card-front"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="img"><img src="./assets/img/storage_temp.jpg" alt="" srcset=""></div>                            
-                                    <div class="storage-size">Small : W10 x L10 x H12</div>
-                                </div>
-                                <a href="/detail.html" class="content-block">
-                                    <div class="title">Climate Drive-Up Easy Access</div>
-                                    <div class="info">Excl. of (St. Louis County 7.74%)</div>
-                                </a>
-                                <div class="price-block">
-                                    <div class="sell-price">$89</div>
-                                    <div class="slash-price">$89</div>
-                                </div>
-                                <div class="bottom-block">
-                                    <div class="select">
-                                        <select name="" id="">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
-                                        </select>
-                                    </div>
-                                    <div class="btn add"> Book</div>
-                                    <div class="btn reserve"> Reserve</div>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="img-block">                                    
-                                    <div class="more_option">
-                                        <ul>
-                                            <li>
-                                                <i class="fa-light fa-camera-security"></i>
-                                                <div class="more_text">Security Cameras - Fenced or gated area with recorded video surveillance</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-lock-keyhole"></i>
-                                                <div class="more_text">Ground Floor - Reduce your heavy lifting by taking advantage of our ground level units</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-building-lock"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-truck"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-cart-flatbed-boxes"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-warehouse-full"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-temperature-list"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                            <li>
-                                                <i class="fa-light fa-credit-card-front"></i>
-                                                <div class="more_text">Security</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="img"><img class="noimg" src="./assets/img/storage-unit.svg" alt="" srcset=""></div>                            
-                                    <div class="storage-size">Small : W10 x L10 x H12</div>
-                                </div>
-                                <a href="/detail.html" class="content-block">
-                                    <div class="title">Climate Drive-Up Easy Access</div>
-                                    <div class="info">Excl. of (St. Louis County 7.74%)</div>
-                                </a>
-                                <div class="price-block">
-                                    <div class="sell-price">$89</div>
-                                    <div class="slash-price">$89</div>
-                                </div>
-                                <div class="bottom-block">
-                                    <div class="select">
-                                        <select name="" id="">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
-                                        </select>
-                                    </div>
-                                    <div class="btn add"> Book</div>
-                                    <div class="btn reserve"> Reserve</div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
