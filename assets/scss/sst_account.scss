@@ -1,0 +1,3410 @@
+@import '_input.scss';
+@import '_card.scss';
+@import '_switch.scss';
+@import '_radio.scss';
+@import '_checkbox.scss';
+@import '_service.scss';
+
+$font: 'Work Sans', sans-serif;
+
+$thankyou : 'Lavishly Yours', cursive;
+
+$dark   : #743800;
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+*:focus{
+    outline: none;
+}
+.overflow{
+    overflow: hidden;
+}
+
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl,
+.container-fluid{
+    width: 100% !important;
+}
+.__sst_a_body{
+    float: left;
+    width: 100%;
+    min-height: 100vh;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    font-family: 'Work Sans', sans-serif;
+
+    .__sst_a_container{
+        float: left;
+        width: 100%;        
+        
+    }
+
+    .myAccount{
+        float: left;
+        width: 100%;
+
+        ._sst_navbar{
+            position: sticky;
+            width: 100%;
+            height: 55px;
+            background-color: #FFFFFF;
+            left: 0;
+            top: 0;
+            box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+            z-index: 50;
+            display: none;
+
+            @media (max-width: 620px){
+                display: none;
+            }
+
+            .logo{
+                float: left;
+                width: 100%;
+                padding: 7px 10px;
+
+                .img{
+                    float: left;
+                    width: 100px;
+
+                    img{
+                        float: left;
+                        width: 100%;
+                    }
+                }
+
+                .notification{
+                    float: right;
+                    padding: 5px;
+
+                    .n_head{
+                        float: left;
+
+                        .icon{
+                            float: left;
+                            width: 30px;
+                        }
+                    }
+                }
+
+                .country-icon{
+                    float: right;
+                    width: 22px;
+                    border-radius: 100%;
+                    margin: {
+                        top: 10px;
+                        left: 10px;
+                    }
+                    box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.5);
+                    border: solid 1px #838383;
+                }
+            }
+            
+            .account-right{
+                float: right;
+                padding: 15px;
+
+                .notification{
+                    float: left;
+                    padding: 5px;
+
+                    .n_head{
+                        float: left;
+
+                        .icon{
+                            float: left;
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        ._sst_sidebar{
+            position: fixed;
+            width: 250px;
+            height: 100vh;
+            background-color: #ff9831;
+            left: 0;
+            top: 0;
+
+            @media (max-width: 620px){
+                width: 100%;
+                height: 55px;
+                top: auto;
+                bottom: 0;
+                background-color: #FFFFFF;
+                z-index: 50;
+                box-shadow: 0px -2px 1px -1px rgb(0 0 0 / 20%), 0px -1px 1px 0px rgb(0 0 0 / 14%), 0px -1px 3px 0px rgb(0 0 0 / 12%);
+            }
+
+            .logo{
+                float: left;
+                width: 100%;
+                padding: 15px;
+
+                @media (max-width: 620px){
+                    display: none;
+                }
+
+                .img{
+                    float: left;
+                    width: 120px;
+
+                    img{
+                        float: left;
+                        width: 100%;
+                    }
+                }
+
+                .country-icon{
+                    float: right;
+                    width: 30px;
+                    border-radius: 100%;
+                    margin-top: 12px;
+                    box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.5);
+                    border: solid 1px #838383;
+                }
+            }
+
+            nav{
+                float: left;
+                width: 100%;
+                padding: 15px;
+
+                @media (max-width: 620px){
+                    padding: 0;
+                }
+
+                ul{
+                    margin: 0;
+                    padding: 0;
+
+                    @media (max-width: 620px){
+                        display: flex;
+                        justify-content: space-around;
+                    }
+
+                    li{
+                        display: block;
+                        padding: 5px 0;
+
+                        @media (max-width: 620px){
+                            &::after, &::before{
+                                display: none;
+                            }
+                        }
+
+                        &.active{
+                            position: relative;
+                        
+                            &:after, &:before {
+                                left: 90%;
+                                top: 50%;
+                                border: solid transparent;
+                                content: "";
+                                height: 0;
+                                width: 0;
+                                position: absolute;
+                                pointer-events: none;
+                            }
+                            
+                            &:after {
+                                border-color: rgba(136, 183, 213, 0);
+                                border-right-color: #f2f2f2;
+                                border-width: 18px;
+                                margin-top: -18px;
+                            }
+                            &:before {
+                                border-color: rgba(194, 225, 245, 0);
+                                border-right-color: #f2f2f2;
+                                border-width: 19px;
+                                margin-top: -19px;
+                            }
+                        }
+
+                        a{
+                            display: flex;
+                            padding: 5px 0;
+                            text-decoration: none;
+
+                            @media (max-width: 620px){
+                                display: block;
+                                text-align: center;
+                                padding: 0;
+                                padding-top: 5px;
+                            }
+
+                            span{
+                                display: inline;
+                                font: {
+                                    size: 16px;
+                                    weight: 400;
+                                    family: $font;
+                                }
+                                color: $dark;
+                                margin-top: 8px;
+                                text-decoration: none;
+
+                                @media (max-width: 620px){
+                                    float: left;
+                                    clear: left;
+                                    margin-top: 0;
+                                    font-size: 12px;
+                                    weight: 300;
+                                }
+                            }
+
+                            .icon{
+                                float: left;
+                                width: 30px;
+                                margin-right: 5px;
+
+                                @media (max-width: 620px){
+                                    width: 25px;
+                                    margin-right: 0;
+                                    margin-left: calc((100% - 25px) / 2);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        ._sst_main-panel{
+            float: right;
+            width: calc(100% - 250px);
+
+            .breadcums{
+                float: left;
+
+                ul{
+                    margin: 0;
+                    padding: 0;
+
+                    li{
+                        display: inline-block;
+                        position: relative;
+                        padding-right: 30px;
+
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            width: 23px;
+                            height: 23px;
+                            background-image: url(../img/chevron_right.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                            top: 2px;
+                            right: 0;
+                        }
+
+                        &:last-child{
+                            
+                            &::after{
+                                display: none;
+                            }
+                        }
+
+                        a{
+                            display: block;
+                            font: {
+                                size: 20px;
+                                weight: 400;
+                                family: $font;
+                            }
+                            color: $dark;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+            @media (max-width: 620px){
+                width: 100%; 
+            }
+
+            .header-bar{
+                float: left;
+                width: 100%;
+                min-height: 70px;
+                background-color: #FFFFFF;
+                box-shadow: 0 2px 2px rgb(204 197 185 / 50%);
+                padding-left: 20px;
+                display: none;
+
+                @media (max-width: 620px){
+                    display: none;
+                }
+                
+
+                .head{
+                    float: left;
+                    
+                    .title{
+                        float: left;
+                        font: {
+                            size: 20px;
+                            weight: 400;
+                            family: $font;
+                        }
+                        color: $dark;
+                        line-height: 70px;
+                        text-transform: uppercase;
+                    }
+
+                    .breadcums{
+                        float: left;
+
+                        ul{
+                            margin: 0;
+                            padding: 0;
+
+                            li{
+                                display: inline-block;
+                                position: relative;
+                                padding-right: 30px;
+
+                                &::after{
+                                    content: "";
+                                    position: absolute;
+                                    width: 23px;
+                                    height: 23px;
+                                    background-image: url(../img/chevron_right.svg);
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    background-size: contain;
+                                    top: 24px;
+                                    right: 0;
+                                }
+
+                                &:last-child{
+                                    
+                                    &::after{
+                                        display: none;
+                                    }
+                                }
+
+                                a{
+                                    display: block;
+                                    font: {
+                                        size: 20px;
+                                        weight: 400;
+                                        family: $font;
+                                    }
+                                    color: $dark;
+                                    line-height: 70px;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .account-right{
+                    float: right;
+                    padding: 15px;
+    
+                    .notification{
+                        float: left;
+                        padding: 5px;
+    
+                        .n_head{
+                            float: left;
+    
+                            .icon{
+                                float: left;
+                                width: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            ._sst_panel{
+                float: left;
+                width: calc(100% - 30px);
+                min-height: calc(100vh - 30px);
+                margin: 15px;
+                padding: 15px;
+                border-radius: 5px;
+                background-color: #FFFFFF;
+                box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.3);
+
+                @media (max-width: 620px){
+                    width: calc(100% - 20px);
+                    margin: 10px;
+                    padding: 10px;
+                    margin-bottom: 65px;
+                }
+
+                section{
+                    float: left;
+                    width: 100%;
+
+                    ._dashboard_block{
+                        float: left;
+                        width: 100%;
+
+                        .link{
+                            float: left;
+                            width: calc(100% / 5);
+                            min-height: 200px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            @media (max-width: 620px){
+                                width: calc(100% / 2);
+                            }
+                            
+
+                            .box{
+                                float: left;
+                                width: 160px;
+
+                                .img-block{
+                                    float: left;
+                                    width: 100px;
+                                    padding: 20px;
+                                    margin-left: 30px;
+                                    background-color: #ff9831;
+                                    border-radius: 5px;
+                                    box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.5);
+
+                                    .img{
+                                        float: left;
+                                        width: 100%;
+
+                                        img{
+                                            float: left;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+
+                                .name{
+                                    float: left;
+                                    width: 100%;
+                                    font: {
+                                        size: 14px;
+                                        weight: 500;
+                                        family: $font;
+                                    }
+
+                                    color: $dark;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                    margin-top: 10px;
+                                }
+                            }
+                        }
+                    }
+
+                    ._booked_block{
+                        float: left;
+                        width: 100%;
+
+                        .booked-unit{
+                            float: left;
+                            width: 100%;
+        
+                            .head{
+                                float: left;
+                                width: 100%;
+                                padding-bottom: 10px;
+                                border-bottom: solid 1px rgba(0,0,0,0.1);
+        
+                                .title{
+                                    float: left;
+                                    font: {
+                                        size: 18px;
+                                        weight:500;
+                                        family:$font;
+                                    }
+                                    color: #000;
+                                }
+                            }
+        
+                                           
+                            .block{
+                                float: left;
+                                width: 100%;
+                                padding: 10px 0;
+                            
+                                .booked-block{
+                                    float: left;
+                                    width: calc((100% - 40px) / 5);
+                                    background-color: #fff;
+                                    position: relative;
+                                    overflow: hidden;
+                                    margin-right: 10px;
+                                    border: solid 1px #e5e5e5;
+                                    border-radius: 5px;
+                                    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+                                    margin-bottom: 10px;
+                                    position: relative;
+                                    
+        
+                                    &:nth-child(5n+5){
+                                        margin-right: 0;
+                                    }
+
+                                    @media (max-width: 620px){
+                                        width: 100%;
+                                        margin-right: 0;
+                                        margin-bottom: 15px;
+                                        z-index: 1;
+
+                                        &:last-child{
+                                            margin-bottom: 0;
+                                        }
+                                    }
+        
+                                    .img-block{
+                                        float: left;
+                                        width: 100%;
+        
+                                        .img{
+                                            float: left;
+                                            width: 100%;
+                                            height: 120px;
+                                            background-color: #FFF;
+                                            border-bottom: solid 1px #e5e5e5;
+        
+                                            img{
+                                                float: left;
+                                                width: 100%;
+                                                height: 120px;
+                                                object-fit: cover;
+                                                object-position: center;
+                                            }
+                                        }
+                                    }
+        
+                                    .unit-data{
+                                        float: left;
+                                        width: 100%;
+                                        padding: 8px;
+                                        border-bottom: solid 1px #e5e5e5;
+        
+                                        .unit-name{
+                                            float: left;
+                                            font: {
+                                                size: 18px;
+                                                weight: 600;
+                                                family: $font;
+                                            }
+                                            color: #000;
+                                        }
+                                        
+                                        .unit-info{
+                                            float: left;
+                                            font-size: 9px;
+                                            font-weight: 400;
+                                            font-family: $font;
+                                            color: #ff9831;
+                                            text-transform: uppercase;
+                                            border: solid 1px #ff9831;
+                                            margin: 4px 0 0 5px;
+                                            border-radius: 5px;
+                                            padding: 2px;                                    
+                                        }
+        
+                                        .unit-price{
+                                            float: right;
+                                            font: {
+                                                size: 18px;
+                                                weight: 600;
+                                                family: $font;
+                                            }
+                                            color: #000;
+                                        }
+        
+                                        .unit-cycle{
+                                            float: left;
+                                            width: 100%;
+                                            font-size: 11px;
+                                            font-weight: 400;
+                                            font-family: $font;
+                                            color: #000;
+                                            margin: 5px 0 0 0;
+                                            padding: 2px; 
+                                        }
+                                    }
+        
+                                    .content-data{
+                                        float: left;
+                                        width: 100%;
+                                        padding: 10px;
+        
+                                        .detail-data{
+                                            float: left;
+                                            width: 100%;
+        
+                                            ul{
+                                                margin: 0;
+                                                padding: 0;
+        
+                                                li{
+                                                    display: flex;
+                                                    padding: 3px 0;
+        
+                                                    .icon{
+                                                        width: 20px;
+                                                    }
+        
+                                                    span{                                                
+                                                        display: inline-block;
+                                                        font-size: 10px;
+                                                        font-weight: 400;
+                                                        font-family: $font;
+                                                        color: #000;
+                                                        text-transform: uppercase;
+                                                        border-radius: 5px;
+                                                        padding: 4px 6px;
+                                                        margin-top: 2px;
+                                                    }
+                                                }
+                                            }
+                                        }
+        
+                                        .occupied-data{
+                                            float: left;
+                                            width: 100%;
+                                            margin-top: 5px;
+                                            padding-top: 5px;
+                                            border-top: solid 1px #e5e5e5;
+                                        
+        
+                                            .title{
+                                                float: left;
+                                                width: 100%;
+                                                font: {
+                                                    size: 10px;
+                                                    weight: 400;
+                                                    family: $font;
+                                                }
+                                                color: #000;
+                                                margin-bottom: 3px;
+                                            }
+        
+                                            .days{
+                                                float: left;
+                                                width: 100%;
+                                                font: {
+                                                    size: 18px;
+                                                    weight: 600;
+                                                    family: $font;
+                                                }
+                                                color: #000;
+                                            }
+                                        }
+                                        
+                                    }
+        
+                                    .block-frame{
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 100%;
+                                        left: 0;
+                                        top: 0;
+                                        background-color: rgba(0,0,0,0.7);
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+        
+                                        .unit-status{
+                                            flex: 1;
+                                            text-align: center;
+
+                                            &.reject{
+                                                .name{
+                                                    color: darkgoldenrod;
+                                                }
+                                            }
+        
+                                            .icon{
+                                                float: left;
+                                                width: 40px;
+                                                margin-left: calc((100%  - 40px) / 2);
+                                            }
+        
+                                            .name{
+                                                clear: both;
+                                                display: block;
+                                                font: {
+                                                    size: 18px;
+                                                    weight: 600;
+                                                    family: $font;
+                                                }
+                                                color: #FFF;
+                                                padding-top: 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    ._booking_block{
+                        float: left;
+                        width: 100%;
+
+                        .booking-unit{
+                            float: left;
+                            width: 100%;
+        
+                            .head{
+                                float: left;
+                                width: 100%;
+                                padding-bottom: 10px;
+                                border-bottom: solid 1px rgba(0,0,0,0.1);
+        
+                                .title{
+                                    float: left;
+                                    font: {
+                                        size: 18px;
+                                        weight:500;
+                                        family:$font;
+                                    }
+                                    color: #000;
+                                }
+
+                                .download{
+                                    float: right;
+
+                                    &:hover{
+                                        span{
+                                            text-decoration: underline;
+                                        }
+                                    }
+        
+                                    .icon{
+                                        float: left;
+                                        width: 24px;
+                                        margin-left: 5px;
+                                        margin-top: -3px;
+                                    }
+                                    span{
+                                        float: left;
+                                        font: {
+                                            size: 14px;
+                                            weight: 500;
+                                            family: $font;
+                                        }
+                                        color: #000;
+                                    }
+                                }
+
+
+                            }
+        
+                                           
+                            .block{
+                                float: left;
+                                width: 100%;
+                                padding: 10px 0;
+                            
+                                .booking-block{
+                                    float: left;
+                                    width: 100%;
+                                    position: relative;
+                                    border: solid 1px #e5e5e5;
+                                    background-color: #fff;
+
+                                    .bhead{
+                                        float: left;
+                                        width: 100%;
+                                        padding: 0 10px;
+                                        border-bottom: solid 1px #e5e5e5;
+
+                                        .title{
+                                            float: left;
+                                            font: {
+                                                size: 20px;
+                                                weight: 600;
+                                                family: $font;
+                                            }
+                                            color: #000000;
+                                            padding: 10px 0;
+                                        }
+                                    }
+                                    
+                                    .full-slot{
+                                        float: left;
+                                        width: 100%;
+
+                                        .top-slot{
+                                            float: left;
+                                            width: 100%;
+                                            padding: 10px;
+                                            border-bottom: solid 1px #e5e5e5;
+
+                                            .img-block{
+                                                float: left;
+                                                width: 250px;
+
+                                                @media (max-width: 620px) {
+                                                    width: 100%;
+                                                }
+                
+                                                .img{
+                                                    float: left;
+                                                    width: 100%;
+                                                    background-color: #FFF;
+                
+                                                    img{
+                                                        float: left;
+                                                        width: 100%;
+                                                        height: 160px;
+                                                        object-fit: cover;
+                                                        object-position: center;
+                                                    }
+                                                }
+                                            }
+
+                                            .initial-slot{
+                                                float: left;
+                                                width: calc(100% - 250px);
+                                                padding-left: 10px;
+
+                                                @media (max-width: 620px) {
+                                                    width: 100%;
+                                                }
+
+                                                .occupied-data{
+                                                    float: left;
+                                                    width: 50%;
+                                                    padding-top: 15px;
+                                                
+                
+                                                    .title{
+                                                        float: left;
+                                                        width: 100%;
+                                                        font: {
+                                                            size: 10px;
+                                                            weight: 400;
+                                                            family: $font;
+                                                        }
+                                                        color: #000;
+                                                        margin-bottom: 3px;
+                                                    }
+                
+                                                    .days{
+                                                        float: left;
+                                                        width: 100%;
+                                                        font: {
+                                                            size: 35px;
+                                                            weight: 600;
+                                                            family: $font;
+                                                        }
+                                                        color: #000;
+
+                                                        span{
+                                                            font-size: 12px;
+                                                        }
+                                                    }
+                                                }
+
+                                                .unit-data{
+                                                    float: left;
+                                                    width: 50%;
+                                                    padding-top: 15px;
+                    
+                                                    .unit-price{
+                                                        float: right;
+                                                        font: {
+                                                            size: 35px;
+                                                            weight: 600;
+                                                            family: $font;
+                                                        }
+                                                        color: #000;
+                                                    }
+                    
+                                                    .unit-title{
+                                                        float: right;
+                                                        width: 100%;
+                                                        font-size: 12px;
+                                                        font-weight: 400;
+                                                        font-family: $font;
+                                                        color: #000;
+                                                        text-align: right;
+                                                    }
+                                                }
+                                            }
+                
+                                            .content-data{
+                                                float: left;
+                                                width: 100%;
+                
+                                                .detail-data{
+                                                    float: left;
+                                                    width: 100%;
+                
+                                                    ul{
+                                                        margin: 0;
+                                                        padding: 0;
+                
+                                                        li{
+                                                            display: flex;
+                                                            padding: 3px 0;
+                
+                                                            .icon{
+                                                                width: 20px;
+                                                            }
+                
+                                                            span{                                                
+                                                                display: inline-block;
+                                                                font-size: 10px;
+                                                                font-weight: 400;
+                                                                font-family: $font;
+                                                                color: #000;
+                                                                text-transform: uppercase;
+                                                                border-radius: 5px;
+                                                                padding: 4px 6px;
+                                                                margin-top: 2px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                
+                                                
+                                                
+                                            }
+                                        }
+
+                                        .detail-slot{
+                                            width: calc(50% - 1px);
+                                            padding: 10px;
+                                            border-right: solid 1px #e5e5e5;
+
+                                            @media (max-width: 620px) {
+                                                width: 100%;
+                                                border-right: 0;
+                                                padding: 0;
+                                            }
+
+                                            &.lhs{
+                                                float: left;
+                                            }
+                                            &.rhs{
+                                                float: right;
+                                                width: 50%;
+                                                border-right: 0;
+
+                                                @media (max-width: 620px) {
+                                                    width: 100%;
+                                                }
+                                            }
+
+                                            .tabler{
+                                                float: left;
+                                                width: 100%;
+                                                padding: 10px;
+                                                margin-bottom: 10px;
+                                                border: solid 1px #e5e5e5;
+
+                                                @media (max-width: 620px) {
+                                                    border: 0;
+                                                    border-bottom: solid 1px #e5e5e5;
+                                                }
+
+                                                &:last-child{
+                                                    margin-bottom: 0;
+                                                }
+
+                                                .title{
+                                                    float: left;
+                                                    width: 100%;
+                                                    font: {
+                                                        size: 20px;
+                                                        weight: 600;
+                                                        family: $font;
+                                                    }
+                                                    color: #000000;
+                                                }
+
+                                                .table{
+                                                    float: left;
+                                                    width: 100%;
+                                                    margin-top: 10px;
+
+                                                    &.service{
+                                                        table{
+                                                            width: 100%;
+                                                            tr{
+                                                                td{
+                                                                    height: 35px;
+                                                                    font: {
+                                                                        size: 14px;
+                                                                        weight: 400;
+                                                                        family: $font;
+                                                                    }
+                                                                    color: #838383;
+
+                                                                    .icon{
+                                                                        float: left;
+                                                                        width: 20px;
+                                                                    }
+                                                                    span{
+                                                                        float: left;
+                                                                        margin: {
+                                                                            top: 3px;
+                                                                            left: 5px;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    table{
+                                                        width: 100%;
+                                                        tr{
+                                                            td{
+                                                                height: 25px;
+                                                                font: {
+                                                                    size: 14px;
+                                                                    weight: 400;
+                                                                    family: $font;
+                                                                }
+                                                                color: #838383;
+
+                                                                &:last-child{
+                                                                    text-align: right;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                .schedule-form{
+                                                    float: left;
+                                                    width: 100%;
+                                                    margin-top: 10px;
+
+                                                    .input-date{
+                                                        float: left;
+                                                        width: 100%;
+
+                                                        input{
+                                                            float: left;
+                                                            width: 100%;
+                                                            height: 40px;
+                                                            font: {
+                                                                size: 12px;
+                                                                weight: 400;
+                                                                familly: $font;
+                                                            }
+                                                            padding: 0 10px;
+                                                            border: solid 1px #e5e5e5;
+                                                        }
+                                                    }
+                                                    .input-reason{
+                                                        float: left;
+                                                        width: 100%;
+                                                        margin-top: 10px;
+
+                                                        textarea{
+                                                            float: left;
+                                                            width: 100%;
+                                                            font: {
+                                                                size: 12px;
+                                                                weight: 400;
+                                                                familly: $font;
+                                                            }
+                                                            resize: none;
+                                                            padding: 10px;
+                                                            border: solid 1px #e5e5e5;
+                                                        }
+                                                    }
+
+                                                    .btn-bottom{
+                                                        float: left;
+                                                        width: 100%;
+                                                        margin-top: 10px;
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                
+                                                        .cancel{
+                                                            flex:1;
+                                                            padding: 10px 15px;
+                                                            background-color: #ff6e6e;
+                                                            display: flex;
+                                                            text-decoration: none;
+                                                            border-radius: 2px;
+                                                            justify-content: center;
+                                                            border: 0;
+                                                            cursor: pointer;
+                                                            font: {
+                                                                size: 15px;
+                                                                weight: 600;
+                                                                family: $font;
+                                                            }
+                                                            color: #FFF;
+                                                            margin-top: 4px;                                            
+                                                        }
+                
+                                                        .save{
+                                                            flex:1;
+                                                            padding: 10px 15px;
+                                                            background-color: #ff9831;
+                                                            display: flex;
+                                                            text-decoration: none;
+                                                            border-radius: 2px;
+                                                            justify-content: center;
+                                                            border: 0;
+                                                            cursor: pointer;
+                                                            font: {
+                                                                size: 15px;
+                                                                weight: 600;
+                                                                family: $font;
+                                                            }
+                                                            color: #FFF;
+                                                            margin-top: 4px;
+                                                            margin-left: 10px;                                            
+                                                        }
+                                                    }
+                                                }
+
+                                                .trans-detail{
+                                                    float: left;
+                                                    width: 100%;
+                                                    margin-top: 15px;
+
+                                                    .block{
+                                                        float: left;
+                                                        width: 100%;
+                                                        padding-left: 30px;
+
+                                                        .sec-slot{
+                                                            float: left;
+                                                            width: 100%;
+                                                            position: relative;
+                                                            margin-bottom: 25px;
+
+                                                            &:last-child{
+                                                                margin-bottom: 0;
+                                                            }
+
+                                                            &::before{
+                                                                content: "";
+                                                                position: absolute;
+                                                                width: 8px;
+                                                                height: 8px;
+                                                                border: solid 1px #838383;
+                                                                border-radius: 100%;
+                                                                top: calc(50% - 4px);
+                                                                left: -25px;
+                                                            }
+
+                                                            &::after{
+                                                                content: "";
+                                                                position: absolute;
+                                                                width: 1px;
+                                                                height: calc(100% + 16px);
+                                                                border-left: solid 2px #ababab;
+                                                                left: -21px;
+                                                                top: calc(50% + 5px);
+                                                            }
+
+                                                            &:last-child{
+                                                                &::after{
+                                                                    display: none;
+                                                                }
+                                                            }
+
+                                                            .left{
+                                                                float: left;
+                                                                width: 70%;
+
+                                                                .name{
+                                                                    float: left;
+                                                                    width: 100%;
+                                                                    font: {
+                                                                        size: 14px;
+                                                                        weight: 600;
+                                                                        family: $font;
+                                                                    }
+                                                                    color: #000000;
+                                                                }
+                                                                .date{
+                                                                    
+                                                                    float: left;
+                                                                    width: 100%;
+                                                                    font: {
+                                                                        size: 13px;
+                                                                        weight: 300;
+                                                                        family: $font;
+                                                                    }
+                                                                    color: #000000;
+                                                                    margin-top: 5px;
+                                                                }
+                                                            }
+
+                                                            .right{
+                                                                float: left;
+                                                                width: 30%;
+
+                                                                .amount{
+                                                                    float: right;
+                                                                    font: {
+                                                                        size: 14px;
+                                                                        weight: 600;
+                                                                        family: $font;
+                                                                    }
+                                                                    color: #000000;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }                                   
+        
+                                }
+                            }
+                        }
+                    }
+
+                    ._document_block{
+                        float: left;
+                        width: 100%;
+
+                        .documented-unit{
+                            float: left;
+                            width: 100%;
+        
+                            .head{
+                                float: left;
+                                width: 100%;
+                                padding-bottom: 10px;
+                                border-bottom: solid 1px rgba(0,0,0,0.1);
+        
+                                .title{
+                                    float: left;
+                                    font: {
+                                        size: 18px;
+                                        weight:500;
+                                        family:$font;
+                                    }
+                                    color: #000;
+                                }
+
+                                .previous{
+                                    float: left;
+
+                                    a{
+                                        display: inline-block;
+                                        font: {
+                                            size: 18px;
+                                            weight:500;
+                                            family:$font;
+                                        }
+                                        color: #000;
+                                        text-decoration: none;
+                                    }
+
+                                    .icon{
+                                        float: left;
+                                        width: 20px;
+                                        width: 22px;
+                                        margin-top: 1px;
+                                    }
+                                }
+                                .next{
+                                    float: right;
+
+                                    a{
+                                        display: inline-block;
+                                        font: {
+                                            size: 18px;
+                                            weight:500;
+                                            family:$font;
+                                        }
+                                        color: #000;
+                                        text-decoration: none;
+                                    }
+
+                                    .icon{
+                                        float: right;
+                                        width: 22px;
+                                        margin-top: 1px;
+                                    }
+                                }
+
+                                
+
+                                .add-insurance{
+                                    float: right;
+        
+                                    .icon{
+                                        float: left;
+                                        width: 16px;
+                                    }
+                                    span{
+                                        float: left;
+                                        font: {
+                                            size: 14px;
+                                            weight: 500;
+                                            family: $font;
+                                        }
+                                        color: #000;
+                                    }
+                                }
+                            }
+                        
+
+                            .section-block{
+                                float: left;
+                                width: 100%;
+                                margin-top: 15px;
+
+                                .document{
+                                    float: left;
+                                    width: 100%;
+
+                                    .aggrement{
+                                        float: left;
+                                        width: calc((100% - 60px) / 5);
+                                        margin-right: 15px;
+                                        margin-bottom: 15px;
+                                        border-radius: 3px 3px 10px 10px;
+                                        overflow: hidden;
+                                        box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.5);
+
+                                        &:nth-child(5n+5){
+                                            margin-right: 0;
+                                        }
+
+                                        @media (max-width: 620px){
+                                            width: 100%;
+                                        }
+
+                                        .unit-block{
+                                            float: left;
+                                            width: 100%;
+                
+                                            .unit-data{
+                                                float: left;
+                                                width: 100%;
+                
+                                                .head{
+                                                    float: left;
+                                                    width: 100%;
+                                                    padding: 10px;
+                                                    border-bottom: solid 1px #e5e5e5;
+                
+                                                    .title{
+                                                        float: left;
+                                                        font-size: 13px;
+                                                        font-weight: 600;
+                                                        font-family: $font;
+                                                        color: #000;
+                                                        text-transform: uppercase;
+                                                        margin-top: 0;
+                                                    }
+                                                    span{
+                                                        float: right;
+                                                        font-size: 13px;
+                                                        font-weight: 600;
+                                                        font-family: $font;
+                                                        color: #FF5500;
+                                                        text-transform: uppercase;
+                                                    }
+                                                }
+                
+                                                .block{
+                                                    float: left;
+                                                    width: 100%;
+                                                    padding: 10px;
+                                                    border-bottom: solid 1px #e5e5e5; 
+                                                
+                                                    .unit-name{
+                                                        float: left;
+                                                        font: {
+                                                            size: 18px;
+                                                            weight: 600;
+                                                            family: $font;
+                                                        }
+                                                        color: #000;
+                                                    }
+                                                    
+                                                    .unit-info{
+                                                        float: left;
+                                                        font-size: 9px;
+                                                        font-weight: 400;
+                                                        font-family: $font;
+                                                        color: #fff;
+                                                        text-transform: uppercase;
+                                                        background-color: #f50;
+                                                        margin: 4px 0 0 5px;
+                                                        border-radius: 5px;
+                                                        padding: 2px;                                    
+                                                    }
+                
+                                                    .unit-price{
+                                                        float: right;
+                                                        font: {
+                                                            size: 18px;
+                                                            weight: 600;
+                                                            family: $font;
+                                                        }
+                                                        color: #000;
+                                                    }
+                                                }
+                                            }
+                                            
+                
+                                            .content-data{
+                                                float: left;
+                                                width: 100%;
+                                                padding: 10px;
+                
+                                                .detail-data{
+                                                    float: left;
+                                                    width: 100%;
+                
+                                                    ul{
+                                                        margin: 0;
+                                                        padding: 0;
+                
+                                                        li{
+                                                            display: block;
+                                                            padding: 5px 0;
+                
+                                                            .icon{
+                                                                float: left;
+                                                                width: 18px;
+                                                                margin-right: 5px;
+                                                            }
+                
+                                                            span{                                                
+                                                                display: inline-block;
+                                                                font-size: 11px;
+                                                                font-weight: 400;
+                                                                font-family: $font;
+                                                                color: #000;
+                                                                text-transform: uppercase;
+                                                                border-radius: 5px;
+                                                                padding: 2px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                
+                                                .procces-data{
+                                                    float: left;
+                                                    width: 100%;
+                                                    margin-top: 5px;
+                                                    padding-top: 5px;
+                                                    border-top: solid 1px #e5e5e5;
+                
+                                                    table{
+                                                        float: left;
+                                                        width: 100%;
+                
+                                                        tr{
+                                                            td{
+                                                                height: 20px;
+                                                                width: 45%;
+                                                                font: {
+                                                                    size: 12px;
+                                                                    weight: 400;
+                                                                    family: $font;
+                                                                }
+                                                                color: #000;
+                
+                                                                &:nth-child(2){
+                                                                    width: 5%;
+                                                                }
+                                                                &:nth-child(3){
+                                                                    width: 50%;
+                                                                    text-align: right;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                
+                                                                                
+                                                
+                                            }
+                                        }
+
+                                        
+
+
+                                        .bottom-block{
+                                            float: left;
+                                            width: 100%;
+                                            background-color: #ff9831;
+                                            border-radius: 0 0 10px 10px;
+                                            padding: 10px;
+
+                                            .icon{
+                                                float: left;
+                                                width: 30px;
+                                            }
+
+                                            .info{
+                                                float: left;
+                                                width: calc(70% - 30px);
+                                                padding-left: 10px;
+
+                                                .title{
+                                                    float: left;
+                                                    width: 100%;
+                                                    font: {
+                                                        size: 12px;
+                                                        weight: 400;
+                                                        family: $font;
+                                                    }
+                                                    color: $dark;
+                                                }
+
+                                                .mass{
+                                                    float: left;
+                                                    width: 100%;
+                                                    font: {
+                                                        size: 10px;
+                                                        weight: 400;
+                                                        family: $font;
+                                                    }
+                                                    color: $dark;
+                                                    margin-top: 5px;
+                                                }
+                                            }
+
+                                            .preview{
+                                                float: left;
+                                                width: 30%;
+                                                display: flex;
+
+                                                span{
+                                                    float: left;
+                                                    width: 100%;
+                                                    font: {
+                                                        size: 14px;
+                                                        weight: 400;
+                                                        family: $font;
+                                                    }
+                                                    color: $dark;
+                                                    margin: {
+                                                        top: 6px;
+                                                        right: 5px;
+                                                    }
+                                                }
+
+                                                .img{
+                                                    float: left;
+                                                    width: 30px;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // .head-block{
+                                    //     float: left;
+                                    //     width: 100%;
+                                    //     padding: 15px;
+                                    //     border-bottom: solid 1px #e5e5e5;
+
+                                    //     .lblock{
+                                    //         float: left;
+                                    //         width: 50%;
+
+                                    //         .title{
+                                    //             float: left;
+                                    //             font: {
+                                    //                 size: 20px;
+                                    //                 weight: 600;
+                                    //                 family: $font;
+                                    //             }
+                                    //             color: #000000;
+                                    //         }
+
+                                    //         .status{
+                                    //             float: left;
+                                    //             font-size: 9px;
+                                    //             font-weight: 400;
+                                    //             font-family: $font;
+                                    //             color: #ff9831;
+                                    //             text-transform: uppercase;
+                                    //             border: solid 1px #ff9831;
+                                    //             margin: 4px 0 0 5px;
+                                    //             border-radius: 5px;
+                                    //             padding: 2px;                                    
+                                    //         }
+
+                                    //         .size{
+                                    //             float: left;
+                                    //             width: 100%;
+                                    //             font: {
+                                    //                 size: 16px;
+                                    //                 weight: 400;
+                                    //                 family: $font;
+                                    //             }
+                                    //             color: #000000;
+                                    //             margin-top: 5px;
+                                    //         }
+                                    //     }
+
+                                    //     .rblock{
+                                    //         float: right;
+                                    //         width: 50%;
+
+                                    //         .address{
+                                    //             float: right;
+                                    //             font: {
+                                    //                 size: 16px;
+                                    //                 weight: 400;
+                                    //                 family: $font;
+                                    //             }
+                                    //             color: #000000;
+                                    //             margin-top: 5px;
+                                    //         }
+                                    //     }
+                                    // }
+
+                                    // .content-block{
+                                    //     float: left;
+                                    //     width: 100%;
+                                    //     padding: 15px;
+
+                                    //     .aggrement{
+                                    //         float: left;
+                                    //         width: calc((100% - 30px) / 3);
+                                    //         margin-right: 15px;
+                                    //         margin-bottom: 0;
+                                    //         border-radius: 3px 3px 10px 10px;
+                                    //         overflow: hidden;
+                                    //         box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.5);
+
+                                    //         .unit-block{
+                                    //             float: left;
+                                    //             width: 100%;
+                    
+                                    //             .unit-data{
+                                    //                 float: left;
+                                    //                 width: 100%;
+                    
+                                    //                 .head{
+                                    //                     float: left;
+                                    //                     width: 100%;
+                                    //                     padding: 10px;
+                                    //                     border-bottom: solid 1px #e5e5e5;
+                    
+                                    //                     .title{
+                                    //                         float: left;
+                                    //                         font-size: 13px;
+                                    //                         font-weight: 600;
+                                    //                         font-family: $font;
+                                    //                         color: #000;
+                                    //                         text-transform: uppercase;
+                                    //                         margin-top: 0;
+                                    //                     }
+                                    //                     span{
+                                    //                         float: right;
+                                    //                         font-size: 13px;
+                                    //                         font-weight: 600;
+                                    //                         font-family: $font;
+                                    //                         color: #FF5500;
+                                    //                         text-transform: uppercase;
+                                    //                     }
+                                    //                 }
+                    
+                                    //                 .block{
+                                    //                     float: left;
+                                    //                     width: 100%;
+                                    //                     padding: 10px;
+                                    //                     border-bottom: solid 1px #e5e5e5; 
+                                                    
+                                    //                     .unit-name{
+                                    //                         float: left;
+                                    //                         font: {
+                                    //                             size: 18px;
+                                    //                             weight: 600;
+                                    //                             family: $font;
+                                    //                         }
+                                    //                         color: #000;
+                                    //                     }
+                                                        
+                                    //                     .unit-info{
+                                    //                         float: left;
+                                    //                         font-size: 9px;
+                                    //                         font-weight: 400;
+                                    //                         font-family: $font;
+                                    //                         color: #fff;
+                                    //                         text-transform: uppercase;
+                                    //                         background-color: #f50;
+                                    //                         margin: 4px 0 0 5px;
+                                    //                         border-radius: 5px;
+                                    //                         padding: 2px;                                    
+                                    //                     }
+                    
+                                    //                     .unit-price{
+                                    //                         float: right;
+                                    //                         font: {
+                                    //                             size: 18px;
+                                    //                             weight: 600;
+                                    //                             family: $font;
+                                    //                         }
+                                    //                         color: #000;
+                                    //                     }
+                                    //                 }
+                                    //             }
+                                                
+                    
+                                    //             .content-data{
+                                    //                 float: left;
+                                    //                 width: 100%;
+                                    //                 padding: 10px;
+                    
+                                    //                 .detail-data{
+                                    //                     float: left;
+                                    //                     width: 100%;
+                    
+                                    //                     ul{
+                                    //                         margin: 0;
+                                    //                         padding: 0;
+                    
+                                    //                         li{
+                                    //                             display: block;
+                    
+                                    //                             i{
+                                    //                                 font-size: 10px;
+                                    //                                 width: 20px;
+                                    //                             }
+                    
+                                    //                             span{                                                
+                                    //                                 display: inline-block;
+                                    //                                 font-size: 9px;
+                                    //                                 font-weight: 400;
+                                    //                                 font-family: $font;
+                                    //                                 color: #000;
+                                    //                                 text-transform: uppercase;
+                                    //                                 border-radius: 5px;
+                                    //                                 padding: 2px;
+                                    //                             }
+                                    //                         }
+                                    //                     }
+                                    //                 }
+                    
+                                    //                 .procces-data{
+                                    //                     float: left;
+                                    //                     width: 100%;
+                                    //                     margin-top: 5px;
+                                    //                     padding-top: 5px;
+                                    //                     border-top: solid 1px #e5e5e5;
+                    
+                                    //                     table{
+                                    //                         float: left;
+                                    //                         width: 100%;
+                    
+                                    //                         tr{
+                                    //                             td{
+                                    //                                 height: 20px;
+                                    //                                 width: 35%;
+                                    //                                 font: {
+                                    //                                     size: 10px;
+                                    //                                     weight: 400;
+                                    //                                     family: $font;
+                                    //                                 }
+                                    //                                 color: #000;
+                    
+                                    //                                 &:nth-child(2){
+                                    //                                     width: 5%;
+                                    //                                 }
+                                    //                                 &:nth-child(3){
+                                    //                                     width: 60%;
+                                    //                                     text-align: right;
+                                    //                                 }
+                                    //                             }
+                                    //                         }
+                                    //                     }
+                                    //                 }
+                    
+                                    //                 .bottom-section{
+                                    //                     float: left;
+                                    //                     width: 100%;
+                                    //                     border-top: solid 1px #e5e5e5;
+                                    //                     padding: 10px 0 0;
+                                    //                     margin-top: 10px;
+                    
+                                    //                     &.paid-invoice{
+                                    //                         padding: 0;
+                    
+                                    //                         .download-invoice{                                            
+                                    //                             margin-top: 5px;
+                                    //                             padding-top: 5px;
+                                    //                             width: 100%;
+                                    //                         }
+                                    //                     }
+                    
+                                    //                     .download-invoice{
+                                    //                         float: left;
+                                    //                         width: calc(50% - 5px);
+                                    //                         margin-top: 0;
+                                    //                         padding-top: 0;
+                                                            
+                                    //                         a{
+                                    //                             display: block;
+                    
+                                    //                             .icon{
+                                    //                                 float: left;
+                                    //                                 width: 30px;
+                                    //                                 margin-right: 5px;
+                                    //                                 margin-left: -2px;
+                                    //                             }
+                                    //                             span{
+                                    //                                 display: inline-block;
+                                    //                                 font: {
+                                    //                                     size: 14px;
+                                    //                                     weight: 400;
+                                    //                                     family: $font;
+                                    //                                 }
+                                    //                                 color: #000;
+                                    //                                 padding-top: 7px;
+                                    //                             }
+                                    //                         }
+                                    //                     }
+                    
+                                    //                     @include _sst_checkbox(){
+                    
+                                    //                     }
+                    
+                                    //                     .pay-now{
+                                    //                         float: right;
+                                    //                         width: calc(50% - 5px);
+                    
+                                    //                         @include _sst_checkbox(){
+                    
+                                    //                             ._sst_checkbox{
+                                    //                                 float: right;
+                                    //                                 width: auto;
+                                    //                                 margin-top: 8px;
+                                    //                             }
+                    
+                                    //                         }
+                                    //                     }
+                                    //                 }                                   
+                                                    
+                                    //             }
+                                    //         }
+
+                                    //         &:nth-child(3n+3){
+                                    //             margin-right: 0;
+                                    //         }
+
+                                    //         .img{
+                                    //             float: left;
+                                    //             width: 100%;
+
+                                    //             img{
+                                    //                 float: left;
+                                    //                 width: 100%;
+                                    //                 height: 120px;
+                                    //                 object-fit: cover;
+                                    //                 object-position: top;
+                                    //             }
+                                    //         }
+
+                                    //         .bottom-block{
+                                    //             float: left;
+                                    //             width: 100%;
+                                    //             background-color: #ff9831;
+                                    //             border-radius: 0 0 10px 10px;
+                                    //             padding: 10px;
+
+                                    //             .icon{
+                                    //                 float: left;
+                                    //                 width: 30px;
+                                    //             }
+
+                                    //             .info{
+                                    //                 float: left;
+                                    //                 width: calc(100% - 60px);
+                                    //                 padding-left: 10px;
+
+                                    //                 .title{
+                                    //                     float: left;
+                                    //                     width: 100%;
+                                    //                     font: {
+                                    //                         size: 12px;
+                                    //                         weight: 400;
+                                    //                         family: $font;
+                                    //                     }
+                                    //                     color: $dark;
+                                    //                 }
+
+                                    //                 .mass{
+                                    //                     float: left;
+                                    //                     width: 100%;
+                                    //                     font: {
+                                    //                         size: 10px;
+                                    //                         weight: 400;
+                                    //                         family: $font;
+                                    //                     }
+                                    //                     color: $dark;
+                                    //                     margin-top: 5px;
+                                    //                 }
+                                    //             }
+
+                                    //             .download{
+                                    //                 float: left;
+                                    //                 width: 30px;
+
+                                    //                 img{
+                                    //                     float: left;
+                                    //                     width: 100%;
+                                    //                 }
+                                    //             }
+                                    //         }
+                                    //     }
+                                    // }
+                                }
+
+                                .document-preview{
+                                    float: left;
+                                    width: 100%;
+                                    border: solid 1px #e5e5e5;
+
+                                    .dhead-block{
+                                        float: left;
+                                        width: 100%;
+
+                                        .head{
+                                            float: left;
+                                            width: 100%;
+                                            padding: 10px;
+                                            border-bottom: solid 1px #e5e5e5;
+        
+                                            .title{
+                                                float: left;
+                                                font-size: 13px;
+                                                font-weight: 600;
+                                                font-family: $font;
+                                                color: #000;
+                                                text-transform: uppercase;
+                                                margin-top: 0;
+                                            }
+                                            span{
+                                                float: right;
+                                                font-size: 13px;
+                                                font-weight: 600;
+                                                font-family: $font;
+                                                color: #FF5500;
+                                                text-transform: uppercase;
+                                            }
+                                        }
+        
+                                        .block{
+                                            float: left;
+                                            width: 100%;
+                                            padding: 10px;
+                                            border-bottom: solid 1px #e5e5e5; 
+                                        
+                                            .unit-name{
+                                                float: left;
+                                                font: {
+                                                    size: 18px;
+                                                    weight: 600;
+                                                    family: $font;
+                                                }
+                                                color: #000;
+                                            }
+                                            
+                                            .unit-info{
+                                                float: left;
+                                                font-size: 9px;
+                                                font-weight: 400;
+                                                font-family: $font;
+                                                color: #fff;
+                                                text-transform: uppercase;
+                                                background-color: #f50;
+                                                margin: 4px 0 0 5px;
+                                                border-radius: 5px;
+                                                padding: 2px;                                    
+                                            }
+        
+                                            .unit-price{
+                                                float: right;
+                                                font: {
+                                                    size: 18px;
+                                                    weight: 600;
+                                                    family: $font;
+                                                }
+                                                color: #000;
+                                            }
+                                        }
+                                    }
+
+                                    .preview-slot{
+                                        float: left;
+                                        width: 100%;
+
+                                        .slot{
+                                            float: left;
+                                            width: 100%;
+
+                                            &.active{
+                                                .tag{
+
+                                                    .right-tag{
+
+                                                        .arrow{
+                                                            transform: rotate(180deg);
+                                                        }
+                                                    }
+                                                }
+                                                .preview-tag{
+                                                    display: block;
+                                                }
+                                            }
+
+                                            .tag{
+                                                float: left;
+                                                width: 100%;
+                                                padding: 15px 10px;
+                                                border: solid 1px #e5e5e5;
+
+                                                .tagtitle{
+                                                    float: left;
+                                                    font: {
+                                                        size: 18px;
+                                                        weight: 600;
+                                                        family: $font;
+                                                    }
+                                                    color: #000;
+                                                }
+
+                                                .right-tag{
+                                                    float: right;
+
+                                                    .download{
+                                                        float: left;
+                                                        width: 25px;
+                                                        margin-right: 20px;
+
+                                                        img{
+                                                            float: left;
+                                                            width: 100%;
+                                                        }
+                                                    }
+
+                                                    .arrow{
+                                                        float: left;
+                                                        width: 25px;
+                                                        cursor: pointer;
+                                                    }
+                                                }
+                                            }
+
+                                            .preview-tag{
+                                                float: left;
+                                                width: 100%;
+                                                display: none;
+
+                                                embed{
+                                                    float: left;
+                                                    width: 1000px;
+                                                    height: 75vh;
+                                                    margin: {
+                                                        top: 20px;
+                                                        left: calc((100% - 1000px) / 2);
+                                                        right: calc((100% - 1000px) / 2);
+                                                        bottom: 20px;
+                                                    }
+
+                                                    @media (max-width: 620px){
+                                                        width: 100%;
+                                                        height: 600px;
+                                                        margin: 5px 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    ._invoice_block{
+                        float: left;
+                        width: 100%;
+
+                        .invoiced-unit{
+                            float: left;
+                            width: 100%;
+        
+                            .head{
+                                float: left;
+                                width: 100%;
+                                padding-bottom: 10px;
+                                border-bottom: solid 1px rgba(0,0,0,0.1);
+        
+                                .title{
+                                    float: left;
+                                    font: {
+                                        size: 18px;
+                                        weight:500;
+                                        family:$font;
+                                    }
+                                    color: #000;
+                                }
+                                .next{
+                                    float: right;
+
+                                    a{
+                                        display: inline-block;
+                                        font: {
+                                            size: 18px;
+                                            weight:500;
+                                            family:$font;
+                                        }
+                                        color: #000;
+                                        text-decoration: none;
+                                    }
+
+                                    .icon{
+                                        float: right;
+                                        width: 22px;
+                                        margin-top: 1px;
+                                    }
+                                }
+                            }
+                        
+
+                            .section-block{
+                                float: left;
+                                width: 100%;
+                                margin-top: 15px;
+
+                                .invoice{
+                                    float: left;
+                                    width: calc((100% - 30px) / 3);
+                                    border-radius: 5px;
+                                    box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.5);
+                                    margin-right: 15px;
+                                    margin-bottom: 15px;
+                                    display: flex;
+
+                                    &:nth-child(3n+3){
+                                        margin-right: 0;
+                                    }
+
+                                    @media (max-width: 620px){
+                                        width: 100%;
+                                    }
+
+                                    .lhs-invoice{
+                                        float: left;
+                                        width: 40%;
+                                        padding: 10px;
+                                        position: relative;
+
+                                        .tit-head{
+                                            float: left;
+                                            width: 100%;
+
+                                            .title{
+                                                float: left;
+                                                width: 100%;
+                                                font: {
+                                                    size: 12px;
+                                                    weight: 500;
+                                                    family: $font;
+                                                }
+                                                color: #000;
+                                            }
+
+                                            .invoice-number{
+                                                float: left;
+                                                width: 100%;
+                                                font: {
+                                                    size: 20px;
+                                                    weight: 600;
+                                                    family: $font;
+                                                }
+                                                margin-top: 5px;
+                                                color: #000;
+                                            }
+                                        }
+
+                                        .invoice-data{
+                                            float: left;
+                                            width: 100%;
+                                            margin-top: 5px;
+
+                                            .unit-number{
+                                                float: left;
+                                                width: 100%;
+
+                                                .icon{
+                                                    float: left;
+                                                    width: 22px;
+                                                }
+                                                span{
+                                                    float: left;
+                                                    font: {
+                                                        size: 12px;
+                                                        weight: 400;
+                                                        family: $font;
+                                                    }
+                                                    color: #000;
+                                                    margin: {
+                                                        top: 5px;
+                                                        left: 5px;
+                                                    }
+                                                }
+                                            }
+
+                                            .unit-warehouse{
+                                                float: left;
+                                                width: 100%;
+
+                                                .icon{
+                                                    float: left;
+                                                    width: 22px;
+                                                }
+                                                span{
+                                                    float: left;
+                                                    width: calc(100% - 30px);
+                                                    font: {
+                                                        size: 12px;
+                                                        weight: 400;
+                                                        family: $font;
+                                                    }
+                                                    color: #000;
+                                                    margin: {
+                                                        top: 5px;
+                                                        left: 5px;
+                                                    }
+                                                    white-space: nowrap;
+                                                    overflow: hidden;
+                                                    text-overflow: ellipsis;
+                                                }
+                                            }
+                                        }
+
+                                        .btn-bottom{
+                                            float: left;
+                                            width: calc(100% - 10px);
+                                            margin-top: 10px;
+                                            position: absolute;
+                                            left: 10px;
+                                            bottom: 10px;
+
+                                            .download{
+                                                float: left;
+                                                width: 100%;
+                                                padding: 8px 15px;
+                                                background-color: #ff9831;
+                                                display: flex;
+                                                text-decoration: none;
+                                                border-radius: 2px;
+                                                justify-content: center;
+
+                                                .icon{
+                                                    width: 20px;
+                                                    margin-right: 5px;
+                                                }
+
+                                                span{
+                                                    font: {
+                                                        size: 14px;
+                                                        weight: 500;
+                                                        family: $font;
+                                                    }
+                                                    color: $dark;
+                                                    margin-top: 4px;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .rhs-invoice{
+                                        float: right;
+                                        width: 60%;
+                                        padding: 10px;
+
+                                        .amount-block{
+                                            float: left;
+                                            width: 100%;
+                                            min-height: 100px;
+                                            padding: 10px;
+                                            border-radius: 3px;
+                                            background-color: #f3f3f3;
+                                            border: solid 1px #e5e5e5;
+
+                                            .tit-head{
+                                                float: left;
+                                                width: 100%;
+                                                text-align: center;
+    
+                                                .title{
+                                                    float: left;
+                                                    width: 100%;
+                                                    font: {
+                                                        size: 12px;
+                                                        weight: 500;
+                                                        family: $font;
+                                                    }
+                                                    color: #000;
+                                                }
+    
+                                                .invoice-amount{
+                                                    float: left;
+                                                    width: 100%;
+                                                    font: {
+                                                        size: 20px;
+                                                        weight: 600;
+                                                        family: $font;
+                                                    }
+                                                    margin-top: 5px;
+                                                    color: #000;
+                                                }
+                                            }
+
+                                            .table{
+                                                float: left;
+                                                width: 100%;
+                                                font: {
+                                                    size: 11px;
+                                                    weight: 400;
+                                                    family: $font;
+                                                }
+                                                color: #000;
+                                                margin-top: 10px;
+
+                                                table{
+                                                    width: 100%;
+
+                                                    tr{
+                                                        td{
+                                                            height: 20px;
+
+                                                            &:last-child{
+                                                                width: 70%;
+                                                                text-align: right;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .btn-bottom{
+                                            float: left;
+                                            width: 100%;
+                                            margin-top: 10px;
+
+                                            .paynow{
+                                                float: left;
+                                                width: 100%;
+                                                padding: 8px 15px;
+                                                background-color: #ff6e6e;
+                                                display: flex;
+                                                text-decoration: none;
+                                                border-radius: 2px;
+                                                justify-content: center;
+                                                border: 0;
+                                                cursor: pointer;
+
+                                                .icon{
+                                                    width: 20px;
+                                                    margin-right: 5px;
+                                                }
+
+                                                span{
+                                                    font: {
+                                                        size: 15px;
+                                                        weight: 600;
+                                                        family: $font;
+                                                    }
+                                                    color: #FFF;
+                                                    margin-top: 4px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    ._insurance_block{
+                        float: left;
+                        width: 100%;
+
+                        .insurance-unit{
+                            float: left;
+                            width: 100%;
+        
+                            .head{
+                                float: left;
+                                width: 100%;
+                                padding-bottom: 10px;
+                                border-bottom: solid 1px rgba(0,0,0,0.1);
+        
+                                .title{
+                                    float: left;
+                                    font: {
+                                        size: 18px;
+                                        weight:500;
+                                        family:$font;
+                                    }
+                                    color: #000;
+                                }
+                                .next{
+                                    float: right;
+
+                                    a{
+                                        display: inline-block;
+                                        font: {
+                                            size: 18px;
+                                            weight:500;
+                                            family:$font;
+                                        }
+                                        color: #000;
+                                        text-decoration: none;
+                                    }
+
+                                    .icon{
+                                        float: right;
+                                        width: 22px;
+                                        margin-top: 1px;
+                                    }
+                                }
+                            }
+                        
+
+                            .section-block{
+                                float: left;
+                                width: 100%;
+                                margin-top: 15px;
+
+                                .insurance{
+                                    float: left;
+                                    width: calc((100% - 55px) / 4);
+                                    min-height: 179px;
+                                    padding: 10px;
+                                    margin-right: 15px;
+                                    margin-bottom: 15px;
+                                    box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.5);
+
+                                    &:nth-child(4n+4){
+                                        margin-right: 0;
+                                    }
+
+                                    @media (max-width: 620px){
+                                        width: 100%;
+                                    }
+
+                                    .ins-head{
+                                        float: left;
+                                        width: 100%;
+
+                                        .title{
+                                            float: left;
+                                            font: {
+                                                size: 18px;
+                                                weight: 600;
+                                                family: $font;
+                                            }
+                                            color: #000;
+                                        }
+
+                                        .status{
+                                            float: right;
+                                            font-size: 11px;
+                                            font-weight: 400;
+                                            font-family: $font;
+                                            color: #FFF;
+                                            text-transform: uppercase;
+                                            background-color: #ff9831;
+                                            margin: 4px 0 0 5px;
+                                            border-radius: 5px;
+                                            padding: 2px;                                    
+                                        }                                        
+                                    }
+
+                                    .insurance-data{
+                                        float: left;
+                                        width: 100%;                                        
+
+                                        .table{
+                                            float: left;
+                                            width: 100%;
+                                            font: {
+                                                size: 12px;
+                                                weight: 400;
+                                                family: $font;
+                                            }
+                                            color: #000;
+                                            margin-top: 10px;
+
+                                            table{
+                                                width: 100%;
+
+                                                tr{
+                                                    td{
+                                                        height: 20px;
+
+                                                        &:last-child{
+                                                            width: 70%;
+                                                            text-align: right;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .btn-bottom{
+                                        float: left;
+                                        width: 100%;
+                                        margin-top: 10px;
+
+                                        .buynow{
+                                            float: left;
+                                            width: 100%;
+                                            padding: 8px 15px;
+                                            background-color: #000;
+                                            display: flex;
+                                            text-decoration: none;
+                                            border-radius: 2px;
+                                            justify-content: center;
+                                            border: 0;
+                                            cursor: pointer;
+                                            font: {
+                                                size: 15px;
+                                                weight: 600;
+                                                family: $font;
+                                            }
+                                            color: #FFF;
+                                            margin-top: 4px;                                            
+                                        }
+
+                                        .change{
+                                            float: left;
+                                            width: 100%;
+                                            padding: 8px 15px;
+                                            background-color: #ff6e6e;
+                                            display: flex;
+                                            text-decoration: none;
+                                            border-radius: 2px;
+                                            justify-content: center;
+                                            border: 0;
+                                            cursor: pointer;
+                                            font: {
+                                                size: 15px;
+                                                weight: 600;
+                                                family: $font;
+                                            }
+                                            color: #FFF;
+                                            margin-top: 4px;                                            
+                                        }
+                                    }
+                                }
+
+                                .insurance-plans{
+                                    float: left;
+                                    width: 100%;
+                                    margin-top: -10px;               
+                                                   
+                                    .block{
+                                        float: left;
+                                        width: 100%;
+                                        padding: 10px 0;
+                
+                                        .plan-data{
+                                            float: left;
+                                            width: 100%;
+                                            border: solid 1px #e5e5e5;
+                                            box-shadow: 0 0 2px rgba(0,0,0,0.2);
+                                            margin-bottom: 10px;
+                                            padding: 5px 0;
+                
+                                            &:last-child{
+                                                margin-bottom: 0;
+
+                                                .radio-opt{
+
+                                                    label{
+                                                        span{
+                                                            margin-top: 5px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                
+                                            @include radio(){
+                                                .radio-opt{
+                                                    width: 100%;
+                
+                                                    label{
+                
+                                                        span{
+                                                            text-transform: uppercase;
+
+                                                            @media (max-width: 620px) {
+                                                                width: calc(100% - 40px);
+                                                                margin-top: 0;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                
+                                            .insurance-form{
+                                                float: left;
+                                                width: 100%;
+                                                padding: 10px 10px 5px;
+                                                margin-top: 5px;
+                                                border-top: solid 1px #e5e5e5;
+                                                display: none;
+                
+                                                @include inputs(){
+                
+                                                    .input-block{
+                
+                                                        &:first-child{
+                                                            .block{
+                                                                width: 100%;
+                                                            }
+                                                        }
+                
+                                                        .block{
+                                                            padding: 0;
+                                                            width: calc(50% - 5px);
+                                                            
+                
+                                                            &:nth-child(2n+2){
+                                                                float: right;
+                                                            }
+                
+                                                            .input{
+                                                                label{
+                                                                    text-transform: uppercase;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                
+                                                }
+                                            }
+                                        }                                        
+                                    }
+                                    .btn-bottom{
+                                        float: left;
+                                        width: 100%;
+                                        margin-top: 10px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        .procced{
+                                            width: 150px;
+                                            padding: 10px 15px;
+                                            background-color: #000;
+                                            display: flex;
+                                            text-decoration: none;
+                                            border-radius: 2px;
+                                            justify-content: center;
+                                            border: 0;
+                                            cursor: pointer;
+                                            font: {
+                                                size: 15px;
+                                                weight: 600;
+                                                family: $font;
+                                            }
+                                            color: #FFF;
+                                            margin-top: 4px;                                            
+                                        }
+
+                                        .back{
+                                            width: 150px;
+                                            padding: 10px 15px;
+                                            background-color: #ff6e6e;
+                                            display: flex;
+                                            text-decoration: none;
+                                            border-radius: 2px;
+                                            justify-content: center;
+                                            border: 0;
+                                            cursor: pointer;
+                                            font: {
+                                                size: 15px;
+                                                weight: 600;
+                                                family: $font;
+                                            }
+                                            color: #FFF;
+                                            margin-top: 4px;
+                                            margin-right: 10px;                                            
+                                        }
+                                    }
+                                }
+
+                                .insurance-success{
+                                    float: left;
+                                    width: 300px;
+                                    margin: {
+                                        top: 5%;
+                                        left: calc((100% - 300px) / 2);
+                                        right: calc((100% - 300px) / 2);
+                                    }
+
+                                    .img{
+                                        float: left;
+                                        width: 100%;
+
+                                        img{
+                                            float: left;
+                                            width: 100%;
+                                        }
+                                    }
+
+                                    .text{
+                                        float: left;
+                                        width: 100%;
+                                        font: {
+                                            size: 18px;
+                                            weight: 500;
+                                            family: $font;
+                                        }
+                                        color: #000;
+                                        padding: 15px 0;
+                                        text-align: center;
+                                    }
+
+                                    .btn-bottom{
+                                        float: left;
+                                        width: 100%;
+                                        margin-top: 10px;
+
+                                        .continue{
+                                            width: 100%;
+                                            padding: 10px 15px;
+                                            background-color: #000;
+                                            display: flex;
+                                            text-decoration: none;
+                                            border-radius: 2px;
+                                            justify-content: center;
+                                            border: 0;
+                                            cursor: pointer;
+                                            font: {
+                                                size: 15px;
+                                                weight: 600;
+                                                family: $font;
+                                            }
+                                            color: #FFF;
+                                            margin-top: 4px;                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    ._profile_block{
+                        float: left;
+                        width: 100%;
+
+                        .profile-view{
+                            float: left;
+                            width: 100%;
+        
+                            .head{
+                                float: left;
+                                width: 100%;
+                                padding-bottom: 10px;
+                                border-bottom: solid 1px rgba(0,0,0,0.1);
+        
+                                .title{
+                                    float: left;
+                                    font: {
+                                        size: 18px;
+                                        weight:500;
+                                        family:$font;
+                                    }
+                                    color: #000;
+                                }
+                                .next{
+                                    float: right;
+
+                                    a{
+                                        display: inline-block;
+                                        font: {
+                                            size: 18px;
+                                            weight:500;
+                                            family:$font;
+                                        }
+                                        color: #000;
+                                        text-decoration: none;
+                                    }
+
+                                    .icon{
+                                        float: right;
+                                        width: 22px;
+                                        margin-top: 1px;
+                                    }
+                                }
+
+                                .add-card{
+                                    float: right;
+        
+                                    .icon{
+                                        float: left;
+                                        width: 16px;
+                                    }
+                                    span{
+                                        float: left;
+                                        font: {
+                                            size: 14px;
+                                            weight: 500;
+                                            family: $font;
+                                        }
+                                        color: #000;
+                                    }
+                                }
+                            }
+                        
+
+                            .section-block{
+                                float: left;
+                                width: 100%;
+                                margin-top: 15px;
+
+                                .main-view{
+                                    float: left;
+                                    width: 100%;
+
+                                    .profile-col{
+                                        float: left;
+                                        width: 100%;
+
+                                        .profile-img{
+                                            float: left;
+                                            width: 80px;
+                                            border-radius: 100%;
+
+                                            .img{
+                                                float: left;
+                                                width: 100%;
+                                                border-radius: 100%;
+
+                                                img{
+                                                    float: left;
+                                                    width: 100%;
+                                                    border-radius: 100%;
+                                                }
+                                            }
+                                        }
+                                        .detail-slot{
+                                            float: left;
+                                            width: calc(100% - 80px);
+                                            padding-left: 20px;
+                                            margin-top: 20px;
+
+                                            .text{
+                                                float: left;
+                                                width: 100%;
+                                                font: {
+                                                    size: 16px;
+                                                    weight: 400;
+                                                    family: $font;
+                                                }
+                                                color: #000;
+                                                margin-bottom: 5px;
+                                            }
+                                        }
+                                    }
+
+                                    .profile-menu{
+                                        float: left;
+                                        width: 100%;
+                                        margin-top: 25px;
+
+                                        ul{
+                                            margin: 0;
+                                            padding: 0;
+
+                                            li{
+                                                display: block;
+                                                padding: 15px;
+                                                box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.5);
+                                                margin-bottom: 15px;
+
+                                                a{
+                                                    display: flex;
+                                                    text-decoration: none;
+
+                                                    span{
+                                                        width: calc(100% - 30px);
+                                                        font: {
+                                                            size: 16px;
+                                                            weight: 400;
+                                                            family: $font;
+                                                        }
+                                                        color: #000;
+                                                        padding-top: 5px;
+                                                    }
+
+                                                    .icon{
+                                                        float: right;
+                                                        width: 30px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+
+                                .profile-detail{
+                                    float: left;
+                                    width: 100%;
+
+                                    .profile-edit{
+                                        float: left;
+                                        width: 100%;
+                                        padding: 10px 0;
+                
+                                        .profile-image{
+                                            float: left;
+                                            width: 200px;
+                                            position: relative;
+
+                                            @media (max-width: 620px){
+                                                margin-left: calc((100% - 200px) / 2);
+                                            }
+                
+                                            .image{
+                                                float: left;
+                                                width: 100%;
+                                                border: solid 1px #ababab;
+                
+                                                .img{
+                                                    float: left;
+                                                    width: 100%;
+                
+                                                    img{
+                                                        float: left;
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+                
+                                            .upload{
+                                                position: absolute;
+                                                right: 0;
+                                                bottom: 0;
+                                                background-color: rgba(0,0,0,0.6);
+                                                padding: 5px 10px;
+                                                cursor: pointer;
+                                                border-top-left-radius: 10px;
+                
+                                                input[type="file"]{
+                                                    position: absolute;
+                                                    width: 100%;
+                                                    opacity: 0;
+                                                    filter: opacity(0);
+                                                    cursor: pointer;
+                                                }
+                
+                                                .icon{
+                                                    float: left;
+                                                    width: 24px;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+                
+                                        .profile-form{
+                                            float: right;
+                                            width: calc(100% - 220px);
+                                            border-left: solid 1px #e5e5e5;
+                                            padding-left: 20px;
+
+                                            @media (max-width: 620px){
+                                                width: 100%;
+                                                border-left: 0;
+                                                padding-left: 0;
+                                                padding-top: 20px;
+                                                margin-top: 20px;
+                                                border-top: solid 1px #e5e5e5;
+                                            }
+                
+                                            @include inputs(){
+                                                .input-block{
+                                                    .block{
+                                                        padding: 0;
+                                                    }
+                                                }
+                                            }
+                
+                                            .bottom-block{
+                                                float: left;
+                                                width: 100%;
+                                                
+                                                .btn-save{
+                                                    float: left;
+                                                    width: 100%;
+                                                    font: {
+                                                        size: 15px;
+                                                        weight: 400;
+                                                        family: $font;
+                                                    }
+                                                    color: #FFF;
+                                                    background-color: #FF5500;
+                                                    padding: 12px;
+                                                    border: 0;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .profile-address{
+                                    float: left;
+                                    width: 100%;
+
+                                    .address-edit{
+                                        float: left;
+                                        width: 100%;
+                                        padding: 10px 0;
+                
+                                        .address-form{
+                                            float: left;
+                                            width: 100%;
+                
+                                            @include inputs(){
+                                                .input-block{
+                                                    width: calc(50% - 5px);
+
+                                                    @media (max-width: 620px){
+                                                        width: 100%;
+                                                    }
+                
+                                                    &:nth-child(2n+2){
+                                                        float: right;
+                                                    }
+                                                    .block{
+                                                        padding: 0;
+                                                    }
+                                                }
+                                            }
+                
+                                            .bottom-block{
+                                                float: left;
+                                                width: 100%;
+                                                
+                                                .btn-save{
+                                                    float: left;
+                                                    width: 100%;
+                                                    font: {
+                                                        size: 15px;
+                                                        weight: 400;
+                                                        family: $font;
+                                                    }
+                                                    color: #FFF;
+                                                    background-color: #FF5500;
+                                                    padding: 12px;
+                                                    border: 0;
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+                                    }
+                
+                                }
+
+                                .profile-cards{
+                                    float: left;
+                                    width: 100%;
+
+                                    .cards-block{
+                                        float: left;
+                                        width: 100%;
+
+                                        .block{
+                                            float: left;
+                                            width: 100%;
+                    
+                                            .card-slot{
+                                                float: left;
+                                                width: calc(50% - 5px);
+                                                margin-bottom: 10px;
+
+                                                @media (max-width: 620px){
+                                                    width: 100%;
+                                                }
+                    
+                                                &:nth-child(2n+2){
+                                                    float: right;
+                                                }
+                    
+                                                .card{
+                                                    float: left;
+                                                    width: 100%;
+                                            
+                                                    .block{
+                                                        float: left;
+                                                        width: 100%;
+                                            
+                                                        .view-block{
+                                                            float: left;
+                                                            width: 100%;
+                                                            padding: 10px;
+                                                            border: solid 1px #e5e5e5;
+                                            
+                                                            .img{
+                                                                float: left;
+                                                                width: 40px;
+                                            
+                                                                img{
+                                                                    float: left;
+                                                                    width: 100%;
+                                                                }
+                                                            }
+                                            
+                                                            .detail-block{
+                                                                float: left;
+                                                                width: calc(100% - 100px);
+                                                                padding-left: 10px;
+                                            
+                                                                .name{
+                                                                    float: left;
+                                                                    width: 100%;
+                                                                    font: {
+                                                                        size: 15px;
+                                                                        weight: 400;
+                                                                        family: $font;
+                                                                    }
+                                                                    color: #000;
+                                                                }
+                                            
+                                                                .number{
+                                                                    float: left;
+                                                                    width: 100%;
+                                                                    font: {
+                                                                        size: 15px;
+                                                                        weight: 400;
+                                                                        family: $font;
+                                                                    }
+                                                                    color: #000;
+                                                                }
+                                                            }
+                    
+                                                            .action{
+                                                                float: right;
+                                                                margin-top: 9px;
+                    
+                                                                .edit{
+                                                                    float: left;
+                                                                    width: 20px;
+                                                                    cursor: pointer;
+                                                                }
+                    
+                                                                .delete{
+                                                                    float: left;
+                                                                    width: 20px;
+                                                                    margin-left: 5px;
+                                                                    cursor: pointer;
+                                                                }                                            
+                                                            }
+                                                        }
+                                            
+                                                        .form-block{
+                                                            float: left;
+                                                            width: 100%;
+                                                            padding: 0;
+                                                            border: solid 1px #e5e5e5;
+                                                            border-top: 0;
+                                            
+                                                            table{
+                                                                width: 100%;
+                                                                tr{
+                                                                    td{
+                                                                        height: 35px;
+                                                                        padding: 0 10px;
+                                                                        font: {
+                                                                            size: 12px;
+                                                                            weight: 400;
+                                                                            family: $font;
+                                                                        }
+                    
+                                                                        &:last-child{
+                    
+                                                                            @include switch(){
+                                                                                .switch{
+                                                                                    float: right;
+                                                                                    margin-top: 3px;
+                                                                                }
+                                                                            }
+                    
+                                                                            .icon{
+                                                                                float: right;
+                                                                                width: 24px;
+                                                                                cursor: pointer;
+                                                                            }
+                                                                        }
+                                                                    }
+                    
+                                            
+                                                                    &:last-child{
+                                                                        td{
+                                                                            border-bottom: 0;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                    
+                                            .card-form{
+                                                float: left;
+                                                width: 100%;
+                                                padding: 10px 0;
+                    
+                                                @include inputs(){
+                                                    .input-block{
+                                                        .block{
+                                                            padding: 0;
+                    
+                                                            label{
+                                                                width: 100%;
+                                                                text-transform: uppercase;
+                                                            }
+                    
+                                                            &.expire{
+                                                                width: calc(50% - 5px);
+                    
+                                                                input{
+                                                                    width: 50%;
+                                                                }
+                                                            }
+                    
+                                                            &.cvv{
+                                                                float: right;
+                                                                width: calc(50% - 5px);
+                    
+                                                                input{
+                                                                    width: 50%;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                    
+                                                .bottom-block{
+                                                    float: left;
+                                                    width: 100%;
+                                                    
+                                                    .btn-save{
+                                                        float: left;
+                                                        width: calc(50% - 5px);
+                                                        font: {
+                                                            size: 15px;
+                                                            weight: 400;
+                                                            family: $font;
+                                                        }
+                                                        color: #FFF;
+                                                        background-color: #FF5500;
+                                                        padding: 12px;
+                                                        border: 0;
+                                                        cursor: pointer;
+                                                        border: solid 1px #FF5500;
+                                                    }
+                                                    
+                                                    .btn-cancel{
+                                                        float: right;
+                                                        width: calc(50% - 5px);
+                                                        font: {
+                                                            size: 15px;
+                                                            weight: 400;
+                                                            family: $font;
+                                                        }
+                                                        color: #000;
+                                                        background-color: #FFF;
+                                                        padding: 12px;
+                                                        border: 0;
+                                                        cursor: pointer;
+                                                        border: solid 1px #e5e5e5;
+                                                    }
+                                                }
+                                            }
+                                        }
+                    
+                                    }
+                                }
+
+                                .profile-password{
+                                    float: left;
+                                    width: 100%;
+                
+                                    .password-form{
+                                        float: left;
+                                        width: 100%;
+            
+                                        @include inputs(){
+                                            .input-block{
+            
+                                                .block{
+                                                    padding: 0;
+                                                }
+                                            }
+                                        }
+            
+                                        .bottom-block{
+                                            float: left;
+                                            width: 100%;
+                                            
+                                            .btn-save{
+                                                float: left;
+                                                width: 100%;
+                                                font: {
+                                                    size: 15px;
+                                                    weight: 400;
+                                                    family: $font;
+                                                }
+                                                color: #FFF;
+                                                background-color: #FF5500;
+                                                padding: 12px;
+                                                border: 0;
+                                                cursor: pointer;
+                                            }
+                                        }
+                                    }                                   
+                
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+            
+        }
+    }
+}

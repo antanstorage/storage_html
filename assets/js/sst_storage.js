@@ -38,6 +38,16 @@ $(function(){
     });
 
     $(".insurance-list input[type='radio']").on('click', function(){
+        console.log($(this).val() );
+        if($(this).val() == 4){
+            $('.insurance-form').show();
+        }else{
+            $('.insurance-form').hide();
+        }
+    });
+
+    $(".insurance-plans input[type='radio']").on('click', function(){
+        console.log($(this).val() );
         if($(this).val() == 4){
             $('.insurance-form').show();
         }else{
@@ -65,6 +75,13 @@ $(function(){
     $('.filter-plot .filter-slot .head').on('click', function(){
         $(this).parents('.filter-slot').find('.slot-block').slideToggle();
         $(this).toggleClass('active');
+    });
+
+
+
+    $('.document-preview .preview-slot .slot .tag .right-tag .arrow').on('click', function(){
+        $('.slot').removeClass('active');
+        $(this).parents('.slot').addClass('active');
     });
     
 });
